@@ -14,3 +14,6 @@ hs_err_pid*
 # IntelliJ IDEA files
 .idea
 .iml
+
+# Node.js files
+node_modules

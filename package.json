@@ -1,0 +1,36 @@
+{
+  "name": "screening",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bower": "^1.3.9",
+    "grunt": "^0.4.5",
+    "grunt-bower-requirejs": "^1.0.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-wiredep": "^1.8.0"
+  },
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "bower": "^1.3.9",
+    "grunt": "^0.4.5",
+    "grunt-bower-requirejs": "^1.0.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.5.1"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santam85/screening.git"
+  },
+  "author": "Marco Santarelli <santa.85@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/santam85/screening/issues"
+  },
+  "homepage": "https://github.com/santam85/screening"
+}

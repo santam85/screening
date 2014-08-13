@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:include="index :: head">
+
+    </head>
+    <body>
+
+        <div id="login" data-role="page" data-add-back-btn="false">
+            <div th:replace="index :: header"></div>
+
+            <div data-role="content">
+                <p th:if="${param.logout}" class="alert alert-success">You have been logged out</p>
+                <p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
+                <h2>Login with Username and Password</h2>
+                <form name="form" th:action="@{/login}" action="/login" method="POST">
+
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="" placeholder="email@domain.com" />
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" />
+
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a data-role="button" th:href="@{/register}" data-icon="plus" data-iconpos="left" data-theme="c">Register</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <button type="submit" name="action" value="Login" data-theme="b">Login</button>
+                        </div>
+                    </div>
+                </form>
+           </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Screening - Pazienti</title>
+
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
+        <!-- endbower -->
+
+        <script src="vendor/requirejs/require.js" data-main="js/main"></script>
+
+    </head>
+    <body>
+        <div id="index" data-role="page">
+
+            <div th:fragment="header" data-role="header" data-position="fixed" data-id="header" data-tap-toggle="false">
+                <h1>Database Screening</h1>
+                <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
+            </div>
+
+            <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+                Logged user: <span sec:authentication="name">Bob</span> |
+                Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span> |
+            </div>
+
+
+            <div data-role="main" class="ui-content">
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                    <a th:href="@{/index(page=0)}" data-role="button" data-icon="arrow-l" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">First Page</a>
+                    <a th:href="${prevLink}" data-role="button" data-icon="back" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">Previous Page</a>
+                    <a th:href="${nextLink}" data-role="button" data-icon="forward" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled" >Next Page</a>
+                    <a th:href="@{/index(page=${pagedResources.metadata.totalPages-1})}" data-role="button" data-icon="arrow-r" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled">Last Page</a>
+                </div>
+
+                <ul data-role="listview" data-inset="true" style="clear: both;" >
+                    <li data-role="list-divider">Lista pazienti, pagina <span th:text="${pagedResources.metadata.number+1}">1</span> di  <span th:text="${pagedResources.metadata.totalPages}">1</span><span class="ui-li-count"> 1 records </span></li>
+                        <li th:each="anagrafica : ${pagedResources.content}" data-theme="d">
+                            <a th:href="@{/anagrafica/{id}(id=${anagrafica.content.id})}">
+                                <h3 th:text="|${anagrafica.content.nome} ${anagrafica.content.cognome}|"></h3>
+                                <p class="folder-number"><strong th:text="${anagrafica.content.cartella}"></strong></p>
+
+                                <p class="ui-li-aside">
+                                    <strong>BMI: </strong><span th:text="${anagrafica.content.bmi}" >1.0</span><br/>
+                                    <strong>Nato il: </strong> <span th:text="${#calendars.format(anagrafica.content.datanascita,'dd/mm/yyyy')}">13 May 2011</span>
+                                </p>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

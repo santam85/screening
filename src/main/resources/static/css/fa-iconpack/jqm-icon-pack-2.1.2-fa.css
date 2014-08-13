@@ -1,0 +1,387 @@
+/* Original icons from jQuery Mobile Icon Pack */
+.ui-icon-ip-email, .ui-icon-ip-page, .ui-icon-ip-question, .ui-icon-ip-foursquare, .ui-icon-ip-dollar,
+.ui-icon-ip-euro, .ui-icon-ip-pound, .ui-icon-ip-apple, .ui-icon-ip-chat, .ui-icon-ip-mappin,
+.ui-icon-ip-direction, .ui-icon-ip-person,
+.ui-icon-ip-wifi, .ui-icon-ip-power, .ui-icon-ip-lightning, .ui-icon-ip-drink, .ui-icon-ip-android {
+    background-image: url("images/icons-18-white-pack.png") !important;
+}
+
+/* Retina variants of original icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+
+    .ui-icon-ip-email, .ui-icon-ip-page, .ui-icon-ip-question, .ui-icon-ip-foursquare, .ui-icon-ip-dollar,
+    .ui-icon-ip-euro, .ui-icon-ip-pound, .ui-icon-ip-apple, .ui-icon-ip-chat, .ui-icon-ip-mappin,
+    .ui-icon-ip-direction, .ui-icon-ip-person,
+    .ui-icon-ip-wifi, .ui-icon-ip-power, .ui-icon-ip-lightning, .ui-icon-ip-drink, .ui-icon-ip-android {
+        background-image: url("images/icons-36-white-pack.png");
+        -moz-background-size: 774px 54px;
+        -o-background-size: 774px 54px;
+        -webkit-background-size: 774px 54px;
+        background-size: 774px 54px;
+    }
+
+
+    .ui-icon-ip-email.ui-icon-ip-alt, .ui-icon-ip-page.ui-icon-ip-alt, .ui-icon-ip-question.ui-icon-ip-alt, .ui-icon-ip-foursquare.ui-icon-ip-alt, .ui-icon-ip-dollar.ui-icon-ip-alt,
+    .ui-icon-ip-euro.ui-icon-ip-alt, .ui-icon-ip-pound.ui-icon-ip-alt, .ui-icon-ip-apple.ui-icon-ip-alt, .ui-icon-ip-chat.ui-icon-ip-alt, .ui-icon-ip-mappin.ui-icon-ip-alt,
+    .ui-icon-ip-direction.ui-icon-ip-alt, .ui-icon-ip-person.ui-icon-ip-alt,
+    .ui-icon-ip-wifi.ui-icon-ip-alt, .ui-icon-ip-power.ui-icon-ip-alt, .ui-icon-ip-lightning.ui-icon-ip-alt, .ui-icon-ip-drink.ui-icon-ip-alt, .ui-icon-ip-android.ui-icon-ip-alt {
+        background-image: url("images/icons-36-black-pack.png");
+    }
+}
+
+
+/* Positioning of original icons within the sprite */
+.ui-icon-ip-email { background-position: 0 -18px; }
+.ui-icon-ip-page { background-position: -36px -18px; }
+.ui-icon-ip-question { background-position: -72px -18px; }
+.ui-icon-ip-foursquare { background-position: -108px -18px; }
+.ui-icon-ip-dollar { background-position: -216px -18px; }
+.ui-icon-ip-euro { background-position: -252px -18px; }
+.ui-icon-ip-pound { background-position: -288px -18px; }
+.ui-icon-ip-apple { background-position: -324px -18px; }
+.ui-icon-ip-chat { background-position: -360px -18px; }
+.ui-icon-ip-mappin { background-position: -468px -18px;}
+.ui-icon-ip-direction { background-position: -504px -18px; }
+.ui-icon-ip-person { background-position: -720px -18px; }
+.ui-icon-ip-wifi { background-position: -36px -36px; }
+.ui-icon-ip-power { background-position: -108px -36px; }
+.ui-icon-ip-lightning { background-position: -252px -36px; }
+.ui-icon-ip-android { background-position: -324px -36px; }
+
+
+/* Font Awesome */
+@font-face {
+    font-family: "FontAwesome";
+    src: url("font/fontawesome-webfont.eot");
+    src: url("font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+        url("font/fontawesome-webfont.woff") format("woff"),
+        url("font/fontawesome-webfont.ttf") format("truetype"),
+        url("font/fontawesome-webfont.svgz#FontAwesomeRegular") format("svgz"),
+        url("font/fontawesome-webfont.svg#FontAwesomeRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* :before pseudo class of Font Awesome icons */
+.ui-icon-fa-glass:before, .ui-icon-fa-music:before, .ui-icon-fa-fasearch:before, .ui-icon-fa-envelope:before, .ui-icon-fa-heart:before,
+.ui-icon-fa-fastar:before, .ui-icon-fa-star-empty:before, .ui-icon-fa-user:before, .ui-icon-fa-film:before, .ui-icon-fa-th-large:before,
+.ui-icon-fa-th:before, .ui-icon-fa-th-list:before, .ui-icon-fa-ok:before, .ui-icon-fa-remove:before, .ui-icon-fa-zoom-in:before,
+.ui-icon-fa-zoom-out:before, .ui-icon-fa-off:before, .ui-icon-fa-signal:before, .ui-icon-fa-cog:before, .ui-icon-fa-trash:before,
+.ui-icon-fa-fahome:before, .ui-icon-fa-file:before, .ui-icon-fa-time:before, .ui-icon-fa-road:before, .ui-icon-fa-download-alt:before,
+.ui-icon-fa-download:before, .ui-icon-fa-upload:before, .ui-icon-fa-inbox:before, .ui-icon-fa-play-circle:before, .ui-icon-fa-repeat:before,
+.ui-icon-fa-farefresh:before, .ui-icon-fa-list-alt:before, .ui-icon-fa-lock:before, .ui-icon-fa-flag:before, .ui-icon-fa-headphones:before,
+.ui-icon-fa-volume-off:before, .ui-icon-fa-volume-down:before, .ui-icon-fa-volume-up:before, .ui-icon-fa-qrcode:before, .ui-icon-fa-barcode:before,
+.ui-icon-fa-tag:before, .ui-icon-fa-tags:before, .ui-icon-fa-book:before, .ui-icon-fa-bookmark:before, .ui-icon-fa-print:before,
+.ui-icon-fa-camera:before, .ui-icon-fa-font:before, .ui-icon-fa-bold:before, .ui-icon-fa-italic:before, .ui-icon-fa-text-height:before,
+.ui-icon-fa-text-width:before, .ui-icon-fa-align-left:before, .ui-icon-fa-align-center:before, .ui-icon-fa-align-right:before, .ui-icon-fa-align-justify:before,
+.ui-icon-fa-list:before, .ui-icon-fa-indent-left:before, .ui-icon-fa-indent-right:before, .ui-icon-fa-facetime-video:before, .ui-icon-fa-picture:before,
+.ui-icon-fa-pencil:before, .ui-icon-fa-map-marker:before, .ui-icon-fa-adjust:before, .ui-icon-fa-tint:before, .ui-icon-fa-edit:before,
+.ui-icon-fa-share:before, .ui-icon-fa-facheck:before, .ui-icon-fa-move:before, .ui-icon-fa-step-backward:before, .ui-icon-fa-fast-backward:before,
+.ui-icon-fa-backward:before, .ui-icon-fa-play:before, .ui-icon-fa-pause:before, .ui-icon-fa-stop:before, .ui-icon-fa-faforward:before,
+.ui-icon-fa-fast-forward:before, .ui-icon-fa-step-forward:before, .ui-icon-fa-eject:before, .ui-icon-fa-chevron-left:before, .ui-icon-fa-chevron-right:before,
+.ui-icon-fa-plus-sign:before, .ui-icon-fa-minus-sign:before, .ui-icon-fa-remove-sign:before, .ui-icon-fa-ok-sign:before, .ui-icon-fa-question-sign:before,
+.ui-icon-fa-info-sign:before, .ui-icon-fa-screenshot:before, .ui-icon-fa-remove-circle:before, .ui-icon-fa-ok-circle:before, .ui-icon-fa-ban-circle:before,
+.ui-icon-fa-arrow-left:before, .ui-icon-fa-arrow-right:before, .ui-icon-fa-arrow-up:before, .ui-icon-fa-arrow-down:before, .ui-icon-fa-share-alt:before,
+.ui-icon-fa-resize-full:before, .ui-icon-fa-resize-small:before, .ui-icon-fa-faplus:before, .ui-icon-fa-faminus:before, .ui-icon-fa-asterisk:before,
+.ui-icon-fa-exclamation-sign:before, .ui-icon-fa-gift:before, .ui-icon-fa-leaf:before, .ui-icon-fa-fire:before, .ui-icon-fa-eye-open:before,
+.ui-icon-fa-eye-close:before, .ui-icon-fa-warning-sign:before, .ui-icon-fa-plane:before, .ui-icon-fa-calendar:before, .ui-icon-fa-random:before,
+.ui-icon-fa-comment:before, .ui-icon-fa-magnet:before, .ui-icon-fa-chevron-up:before, .ui-icon-fa-chevron-down:before, .ui-icon-fa-retweet:before,
+.ui-icon-fa-shopping-cart:before, .ui-icon-fa-folder-close:before, .ui-icon-fa-folder-open:before, .ui-icon-fa-resize-vertical:before, .ui-icon-fa-resize-horizontal:before,
+.ui-icon-fa-bar-chart:before, .ui-icon-fa-twitter-sign:before, .ui-icon-fa-facebook-sign:before, .ui-icon-fa-camera-retro:before, .ui-icon-fa-key:before,
+.ui-icon-fa-cogs:before, .ui-icon-fa-comments:before, .ui-icon-fa-thumbs-up:before, .ui-icon-fa-thumbs-down:before, .ui-icon-fa-star-half:before,
+.ui-icon-fa-heart-empty:before, .ui-icon-fa-signout:before, .ui-icon-fa-linkedin-sign:before, .ui-icon-fa-pushpin:before, .ui-icon-fa-external-link:before,
+.ui-icon-fa-signin:before, .ui-icon-fa-trophy:before, .ui-icon-fa-github-sign:before, .ui-icon-fa-upload-alt:before, .ui-icon-fa-lemon:before,
+.ui-icon-fa-phone:before, .ui-icon-fa-check-empty:before, .ui-icon-fa-bookmark-empty:before, .ui-icon-fa-phone-sign:before, .ui-icon-fa-twitter:before,
+.ui-icon-fa-facebook:before, .ui-icon-fa-github:before, .ui-icon-fa-unlock:before, .ui-icon-fa-credit-card:before, .ui-icon-fa-rss:before,
+.ui-icon-fa-hdd:before, .ui-icon-fa-bullhorn:before, .ui-icon-fa-bell:before, .ui-icon-fa-certificate:before, .ui-icon-fa-hand-right:before,
+.ui-icon-fa-hand-left:before, .ui-icon-fa-hand-up:before, .ui-icon-fa-hand-down:before, .ui-icon-fa-circle-arrow-left:before, .ui-icon-fa-circle-arrow-right:before,
+.ui-icon-fa-circle-arrow-up:before, .ui-icon-fa-circle-arrow-down:before, .ui-icon-fa-globe:before, .ui-icon-fa-wrench:before, .ui-icon-fa-tasks:before,
+.ui-icon-fa-filter:before, .ui-icon-fa-briefcase:before, .ui-icon-fa-fullscreen:before,
+.ui-icon-fa-group:before, .ui-icon-fa-link:before, .ui-icon-fa-cloud:before, .ui-icon-fa-beaker:before, .ui-icon-fa-cut:before,
+.ui-icon-fa-copy:before, .ui-icon-fa-paper-clip:before, .ui-icon-fa-save:before, .ui-icon-fa-sign-blank:before, .ui-icon-fa-reorder:before,
+.ui-icon-fa-list-ul:before, .ui-icon-fa-list-ol:before, .ui-icon-fa-strikethrough:before, .ui-icon-fa-underline:before, .ui-icon-fa-table:before,
+.ui-icon-fa-magic:before, .ui-icon-fa-truck:before, .ui-icon-fa-pinterest:before, .ui-icon-fa-pinterest-sign:before, .ui-icon-fa-google-plus-sign:before,
+.ui-icon-fa-google-plus:before, .ui-icon-fa-money:before, .ui-icon-fa-caret-down:before, .ui-icon-fa-caret-up:before, .ui-icon-fa-caret-left:before,
+.ui-icon-fa-caret-right:before, .ui-icon-fa-columns:before, .ui-icon-fa-sort:before, .ui-icon-fa-sort-down:before, .ui-icon-fa-sort-up:before,
+.ui-icon-fa-envelope-alt:before, .ui-icon-fa-linkedin:before, .ui-icon-fa-undo:before, .ui-icon-fa-legal:before, .ui-icon-fa-dashboard:before,
+.ui-icon-fa-comment-alt:before, .ui-icon-fa-comments-alt:before, .ui-icon-fa-bolt:before, .ui-icon-fa-sitemap:before, .ui-icon-fa-umbrella:before,
+.ui-icon-fa-paste:before,
+.ui-icon-fa-user-md:before {
+    display: inline-block;
+    width: 18px;
+    font-family: FontAwesome !important;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Font Awesome icons */
+.ui-icon-fa-glass, .ui-icon-fa-music, .ui-icon-fa-fasearch, .ui-icon-fa-envelope, .ui-icon-fa-heart,
+.ui-icon-fa-fastar, .ui-icon-fa-star-empty, .ui-icon-fa-user, .ui-icon-fa-film, .ui-icon-fa-th-large,
+.ui-icon-fa-th, .ui-icon-fa-th-list, .ui-icon-fa-ok, .ui-icon-fa-remove, .ui-icon-fa-zoom-in,
+.ui-icon-fa-zoom-out, .ui-icon-fa-off, .ui-icon-fa-signal, .ui-icon-fa-cog, .ui-icon-fa-trash,
+.ui-icon-fa-fahome, .ui-icon-fa-file, .ui-icon-fa-time, .ui-icon-fa-road, .ui-icon-fa-download-alt,
+.ui-icon-fa-download, .ui-icon-fa-upload, .ui-icon-fa-inbox, .ui-icon-fa-play-circle, .ui-icon-fa-repeat,
+.ui-icon-fa-farefresh, .ui-icon-fa-list-alt, .ui-icon-fa-lock, .ui-icon-fa-flag, .ui-icon-fa-headphones,
+.ui-icon-fa-volume-off, .ui-icon-fa-volume-down, .ui-icon-fa-volume-up, .ui-icon-fa-qrcode, .ui-icon-fa-barcode,
+.ui-icon-fa-tag, .ui-icon-fa-tags, .ui-icon-fa-book, .ui-icon-fa-bookmark, .ui-icon-fa-print,
+.ui-icon-fa-camera, .ui-icon-fa-font, .ui-icon-fa-bold, .ui-icon-fa-italic, .ui-icon-fa-text-height,
+.ui-icon-fa-text-width, .ui-icon-fa-align-left, .ui-icon-fa-align-center, .ui-icon-fa-align-right, .ui-icon-fa-align-justify,
+.ui-icon-fa-list, .ui-icon-fa-indent-left, .ui-icon-fa-indent-right, .ui-icon-fa-facetime-video, .ui-icon-fa-picture,
+.ui-icon-fa-pencil, .ui-icon-fa-map-marker, .ui-icon-fa-adjust, .ui-icon-fa-tint, .ui-icon-fa-edit,
+.ui-icon-fa-share, .ui-icon-fa-facheck, .ui-icon-fa-move, .ui-icon-fa-step-backward, .ui-icon-fa-fast-backward,
+.ui-icon-fa-backward, .ui-icon-fa-play, .ui-icon-fa-pause, .ui-icon-fa-stop, .ui-icon-fa-faforward,
+.ui-icon-fa-fast-forward, .ui-icon-fa-step-forward, .ui-icon-fa-eject, .ui-icon-fa-chevron-left, .ui-icon-fa-chevron-right,
+.ui-icon-fa-plus-sign, .ui-icon-fa-minus-sign, .ui-icon-fa-remove-sign, .ui-icon-fa-ok-sign, .ui-icon-fa-question-sign,
+.ui-icon-fa-info-sign, .ui-icon-fa-screenshot, .ui-icon-fa-remove-circle, .ui-icon-fa-ok-circle, .ui-icon-fa-ban-circle,
+.ui-icon-fa-arrow-left, .ui-icon-fa-arrow-right, .ui-icon-fa-arrow-up, .ui-icon-fa-arrow-down, .ui-icon-fa-share-alt,
+.ui-icon-fa-resize-full, .ui-icon-fa-resize-small, .ui-icon-fa-faplus, .ui-icon-fa-faminus, .ui-icon-fa-asterisk,
+.ui-icon-fa-exclamation-sign, .ui-icon-fa-gift, .ui-icon-fa-leaf, .ui-icon-fa-fire, .ui-icon-fa-eye-open,
+.ui-icon-fa-eye-close, .ui-icon-fa-warning-sign, .ui-icon-fa-plane, .ui-icon-fa-calendar, .ui-icon-fa-random,
+.ui-icon-fa-comment, .ui-icon-fa-magnet, .ui-icon-fa-chevron-up, .ui-icon-fa-chevron-down, .ui-icon-fa-retweet,
+.ui-icon-fa-shopping-cart, .ui-icon-fa-folder-close, .ui-icon-fa-folder-open, .ui-icon-fa-resize-vertical, .ui-icon-fa-resize-horizontal,
+.ui-icon-fa-bar-chart, .ui-icon-fa-twitter-sign, .ui-icon-fa-facebook-sign, .ui-icon-fa-camera-retro, .ui-icon-fa-key,
+.ui-icon-fa-cogs, .ui-icon-fa-comments, .ui-icon-fa-thumbs-up, .ui-icon-fa-thumbs-down, .ui-icon-fa-star-half,
+.ui-icon-fa-heart-empty, .ui-icon-fa-signout, .ui-icon-fa-linkedin-sign, .ui-icon-fa-pushpin, .ui-icon-fa-external-link,
+.ui-icon-fa-signin, .ui-icon-fa-trophy, .ui-icon-fa-github-sign, .ui-icon-fa-upload-alt, .ui-icon-fa-lemon,
+.ui-icon-fa-phone, .ui-icon-fa-check-empty, .ui-icon-fa-bookmark-empty, .ui-icon-fa-phone-sign, .ui-icon-fa-twitter,
+.ui-icon-fa-facebook, .ui-icon-fa-github, .ui-icon-fa-unlock, .ui-icon-fa-credit-card, .ui-icon-fa-rss,
+.ui-icon-fa-hdd, .ui-icon-fa-bullhorn, .ui-icon-fa-bell, .ui-icon-fa-certificate, .ui-icon-fa-hand-right,
+.ui-icon-fa-hand-left, .ui-icon-fa-hand-up, .ui-icon-fa-hand-down, .ui-icon-fa-circle-arrow-left, .ui-icon-fa-circle-arrow-right,
+.ui-icon-fa-circle-arrow-up, .ui-icon-fa-circle-arrow-down, .ui-icon-fa-globe, .ui-icon-fa-wrench, .ui-icon-fa-tasks,
+.ui-icon-fa-filter, .ui-icon-fa-briefcase, .ui-icon-fa-fullscreen,
+.ui-icon-fa-group, .ui-icon-fa-link, .ui-icon-fa-cloud, .ui-icon-fa-beaker, .ui-icon-fa-cut,
+.ui-icon-fa-copy, .ui-icon-fa-paper-clip, .ui-icon-fa-save, .ui-icon-fa-sign-blank, .ui-icon-fa-reorder,
+.ui-icon-fa-list-ul, .ui-icon-fa-list-ol, .ui-icon-fa-strikethrough, .ui-icon-fa-underline, .ui-icon-fa-table,
+.ui-icon-fa-magic, .ui-icon-fa-truck, .ui-icon-fa-pinterest, .ui-icon-fa-pinterest-sign, .ui-icon-fa-google-plus-sign,
+.ui-icon-fa-google-plus, .ui-icon-fa-money, .ui-icon-fa-caret-down, .ui-icon-fa-caret-up, .ui-icon-fa-caret-left,
+.ui-icon-fa-caret-right, .ui-icon-fa-columns, .ui-icon-fa-sort, .ui-icon-fa-sort-down, .ui-icon-fa-sort-up,
+.ui-icon-fa-envelope-alt, .ui-icon-fa-linkedin, .ui-icon-fa-undo, .ui-icon-fa-legal, .ui-icon-fa-dashboard,
+.ui-icon-fa-comment-alt, .ui-icon-fa-comments-alt, .ui-icon-fa-bolt, .ui-icon-fa-sitemap, .ui-icon-fa-umbrella,
+.ui-icon-fa-paste,.ui-icon-fa-user-md,
+.ui-icon-fa-searchfield::after {
+    background-image: none;
+    color: #fff;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+ readers do not read off random characters that represent icons */
+.ui-icon-fa-glass:before { content: "\f000"; }
+.ui-icon-fa-music:before { content: "\f001"; }
+.ui-icon-fa-fasearch:before { content: "\f002"; }
+.ui-icon-fa-envelope:before { content: "\f003"; }
+.ui-icon-fa-heart:before { content: "\f004"; }
+.ui-icon-fa-fastar:before { content: "\f005"; }
+.ui-icon-fa-star-empty:before { content: "\f006"; }
+.ui-icon-fa-user:before { content: "\f007"; }
+.ui-icon-fa-film:before { content: "\f008"; }
+.ui-icon-fa-th-large:before { content: "\f009"; }
+.ui-icon-fa-th:before { content: "\f00a"; }
+.ui-icon-fa-th-list:before { content: "\f00b"; }
+.ui-icon-fa-ok:before { content: "\f00c"; }
+.ui-icon-fa-remove:before { content: "\f00d"; }
+.ui-icon-fa-zoom-in:before { content: "\f00e"; }
+.ui-icon-fa-zoom-out:before { content: "\f010"; }
+.ui-icon-fa-off:before { content: "\f011"; }
+.ui-icon-fa-signal:before { content: "\f012"; }
+.ui-icon-fa-cog:before { content: "\f013"; }
+.ui-icon-fa-trash:before { content: "\f014"; }
+.ui-icon-fa-fahome:before { content: "\f015"; }
+.ui-icon-fa-file:before { content: "\f016"; }
+.ui-icon-fa-time:before { content: "\f017"; }
+.ui-icon-fa-road:before { content: "\f018"; }
+.ui-icon-fa-download-alt:before { content: "\f019"; }
+.ui-icon-fa-download:before { content: "\f01a"; }
+.ui-icon-fa-upload:before { content: "\f01b"; }
+.ui-icon-fa-inbox:before { content: "\f01c"; }
+.ui-icon-fa-play-circle:before { content: "\f01d"; }
+.ui-icon-fa-repeat:before { content: "\f01e"; }
+/* \f020 is not a valid unicode character. all shifted one down */
+.ui-icon-fa-farefresh:before { content: "\f021"; }
+.ui-icon-fa-list-alt:before { content: "\f022"; }
+.ui-icon-fa-lock:before { content: "\f023"; }
+.ui-icon-fa-flag:before { content: "\f024"; }
+.ui-icon-fa-headphones:before { content: "\f025"; }
+.ui-icon-fa-volume-off:before { content: "\f026"; }
+.ui-icon-fa-volume-down:before { content: "\f027"; }
+.ui-icon-fa-volume-up:before { content: "\f028"; }
+.ui-icon-fa-qrcode:before { content: "\f029"; }
+.ui-icon-fa-barcode:before { content: "\f02a"; }
+.ui-icon-fa-tag:before { content: "\f02b"; }
+.ui-icon-fa-tags:before { content: "\f02c"; }
+.ui-icon-fa-book:before { content: "\f02d"; }
+.ui-icon-fa-bookmark:before { content: "\f02e"; }
+.ui-icon-fa-print:before { content: "\f02f"; }
+.ui-icon-fa-camera:before { content: "\f030"; }
+.ui-icon-fa-font:before { content: "\f031"; }
+.ui-icon-fa-bold:before { content: "\f032"; }
+.ui-icon-fa-italic:before { content: "\f033"; }
+.ui-icon-fa-text-height:before { content: "\f034"; }
+.ui-icon-fa-text-width:before { content: "\f035"; }
+.ui-icon-fa-align-left:before { content: "\f036"; }
+.ui-icon-fa-align-center:before { content: "\f037"; }
+.ui-icon-fa-align-right:before { content: "\f038"; }
+.ui-icon-fa-align-justify:before { content: "\f039"; }
+.ui-icon-fa-list:before { content: "\f03a"; }
+.ui-icon-fa-indent-left:before { content: "\f03b"; }
+.ui-icon-fa-indent-right:before { content: "\f03c"; }
+.ui-icon-fa-facetime-video:before { content: "\f03d"; }
+.ui-icon-fa-picture:before { content: "\f03e"; }
+.ui-icon-fa-pencil:before { content: "\f040"; }
+.ui-icon-fa-map-marker:before { content: "\f041"; }
+.ui-icon-fa-adjust:before { content: "\f042"; }
+.ui-icon-fa-tint:before { content: "\f043"; }
+.ui-icon-fa-edit:before { content: "\f044"; }
+.ui-icon-fa-share:before { content: "\f045"; }
+.ui-icon-fa-facheck:before { content: "\f046"; }
+.ui-icon-fa-move:before { content: "\f047"; }
+.ui-icon-fa-step-backward:before { content: "\f048"; }
+.ui-icon-fa-fast-backward:before { content: "\f049"; }
+.ui-icon-fa-backward:before { content: "\f04a"; }
+.ui-icon-fa-play:before { content: "\f04b"; }
+.ui-icon-fa-pause:before { content: "\f04c"; }
+.ui-icon-fa-stop:before { content: "\f04d"; }
+.ui-icon-fa-faforward:before { content: "\f04e"; }
+.ui-icon-fa-fast-forward:before { content: "\f050"; }
+.ui-icon-fa-step-forward:before { content: "\f051"; }
+.ui-icon-fa-eject:before { content: "\f052"; }
+.ui-icon-fa-chevron-left:before { content: "\f053"; }
+.ui-icon-fa-chevron-right:before { content: "\f054"; }
+.ui-icon-fa-plus-sign:before { content: "\f055"; }
+.ui-icon-fa-minus-sign:before { content: "\f056"; }
+.ui-icon-fa-remove-sign:before { content: "\f057"; }
+.ui-icon-fa-ok-sign:before { content: "\f058"; }
+.ui-icon-fa-question-sign:before { content: "\f059"; }
+.ui-icon-fa-info-sign:before { content: "\f05a"; }
+.ui-icon-fa-screenshot:before { content: "\f05b"; }
+.ui-icon-fa-remove-circle:before { content: "\f05c"; }
+.ui-icon-fa-ok-circle:before { content: "\f05d"; }
+.ui-icon-fa-ban-circle:before { content: "\f05e"; }
+.ui-icon-fa-arrow-left:before { content: "\f060"; }
+.ui-icon-fa-arrow-right:before { content: "\f061"; }
+.ui-icon-fa-arrow-up:before { content: "\f062"; }
+.ui-icon-fa-arrow-down:before { content: "\f063"; }
+.ui-icon-fa-share-alt:before { content: "\f064"; }
+.ui-icon-fa-resize-full:before { content: "\f065"; }
+.ui-icon-fa-resize-small:before { content: "\f066"; }
+.ui-icon-fa-faplus:before { content: "\f067"; }
+.ui-icon-fa-faminus:before { content: "\f068"; }
+.ui-icon-fa-asterisk:before { content: "\f069"; }
+.ui-icon-fa-exclamation-sign:before { content: "\f06a"; }
+.ui-icon-fa-gift:before { content: "\f06b"; }
+.ui-icon-fa-leaf:before { content: "\f06c"; }
+.ui-icon-fa-fire:before { content: "\f06d"; }
+.ui-icon-fa-eye-open:before { content: "\f06e"; }
+.ui-icon-fa-eye-close:before { content: "\f070"; }
+.ui-icon-fa-warning-sign:before { content: "\f071"; }
+.ui-icon-fa-plane:before { content: "\f072"; }
+.ui-icon-fa-calendar:before { content: "\f073"; }
+.ui-icon-fa-random:before { content: "\f074"; }
+.ui-icon-fa-comment:before { content: "\f075"; }
+.ui-icon-fa-magnet:before { content: "\f076"; }
+.ui-icon-fa-chevron-up:before { content: "\f077"; }
+.ui-icon-fa-chevron-down:before { content: "\f078"; }
+.ui-icon-fa-retweet:before { content: "\f079"; }
+.ui-icon-fa-shopping-cart:before { content: "\f07a"; }
+.ui-icon-fa-folder-close:before { content: "\f07b"; }
+.ui-icon-fa-folder-open:before { content: "\f07c"; }
+.ui-icon-fa-resize-vertical:before { content: "\f07d"; }
+.ui-icon-fa-resize-horizontal:before { content: "\f07e"; }
+.ui-icon-fa-bar-chart:before { content: "\f080"; }
+.ui-icon-fa-twitter-sign:before { content: "\f081"; }
+.ui-icon-fa-facebook-sign:before { content: "\f082"; }
+.ui-icon-fa-camera-retro:before { content: "\f083"; }
+.ui-icon-fa-key:before { content: "\f084"; }
+.ui-icon-fa-cogs:before { content: "\f085"; }
+.ui-icon-fa-comments:before { content: "\f086"; }
+.ui-icon-fa-thumbs-up:before { content: "\f087"; }
+.ui-icon-fa-thumbs-down:before { content: "\f088"; }
+.ui-icon-fa-star-half:before { content: "\f089"; }
+.ui-icon-fa-heart-empty:before { content: "\f08a"; }
+.ui-icon-fa-signout:before { content: "\f08b"; }
+.ui-icon-fa-linkedin-sign:before { content: "\f08c"; }
+.ui-icon-fa-pushpin:before { content: "\f08d"; }
+.ui-icon-fa-external-link:before { content: "\f08e"; }
+.ui-icon-fa-signin:before { content: "\f090"; }
+.ui-icon-fa-trophy:before { content: "\f091"; }
+.ui-icon-fa-github-sign:before { content: "\f092"; }
+.ui-icon-fa-upload-alt:before { content: "\f093"; }
+.ui-icon-fa-lemon:before { content: "\f094"; }
+.ui-icon-fa-phone:before { content: "\f095"; }
+.ui-icon-fa-check-empty:before { content: "\f096"; }
+.ui-icon-fa-bookmark-empty:before { content: "\f097"; }
+.ui-icon-fa-phone-sign:before { content: "\f098"; }
+.ui-icon-fa-twitter:before { content: "\f099"; }
+.ui-icon-fa-facebook:before { content: "\f09a"; }
+.ui-icon-fa-github:before { content: "\f09b"; }
+.ui-icon-fa-unlock:before { content: "\f09c"; }
+.ui-icon-fa-credit-card:before { content: "\f09d"; }
+.ui-icon-fa-rss:before { content: "\f09e"; }
+.ui-icon-fa-hdd:before { content: "\f0a0"; }
+.ui-icon-fa-bullhorn:before { content: "\f0a1"; }
+.ui-icon-fa-bell:before { content: "\f0a2"; }
+.ui-icon-fa-certificate:before { content: "\f0a3"; }
+.ui-icon-fa-hand-right:before { content: "\f0a4"; }
+.ui-icon-fa-hand-left:before { content: "\f0a5"; }
+.ui-icon-fa-hand-up:before { content: "\f0a6"; }
+.ui-icon-fa-hand-down:before { content: "\f0a7"; }
+.ui-icon-fa-circle-arrow-left:before { content: "\f0a8"; }
+.ui-icon-fa-circle-arrow-right:before { content: "\f0a9"; }
+.ui-icon-fa-circle-arrow-up:before { content: "\f0aa"; }
+.ui-icon-fa-circle-arrow-down:before { content: "\f0ab"; }
+.ui-icon-fa-globe:before { content: "\f0ac"; }
+.ui-icon-fa-wrench:before { content: "\f0ad"; }
+.ui-icon-fa-tasks:before { content: "\f0ae"; }
+.ui-icon-fa-filter:before { content: "\f0b0"; }
+.ui-icon-fa-briefcase:before { content: "\f0b1"; }
+.ui-icon-fa-fullscreen:before { content: "\f0b2"; }
+.ui-icon-fa-group:before { content: "\f0c0"; }
+.ui-icon-fa-link:before { content: "\f0c1"; }
+.ui-icon-fa-cloud:before { content: "\f0c2"; }
+.ui-icon-fa-beaker:before { content: "\f0c3"; }
+.ui-icon-fa-cut:before { content: "\f0c4"; }
+.ui-icon-fa-copy:before { content: "\f0c5"; }
+.ui-icon-fa-paper-clip:before { content: "\f0c6"; }
+.ui-icon-fa-save:before { content: "\f0c7"; }
+.ui-icon-fa-sign-blank:before { content: "\f0c8"; }
+.ui-icon-fa-reorder:before { content: "\f0c9"; }
+.ui-icon-fa-list-ul:before { content: "\f0ca"; }
+.ui-icon-fa-list-ol:before { content: "\f0cb"; }
+.ui-icon-fa-strikethrough:before { content: "\f0cc"; }
+.ui-icon-fa-underline:before { content: "\f0cd"; }
+.ui-icon-fa-table:before { content: "\f0ce"; }
+.ui-icon-fa-magic:before { content: "\f0d0"; }
+.ui-icon-fa-truck:before { content: "\f0d1"; }
+.ui-icon-fa-pinterest:before { content: "\f0d2"; }
+.ui-icon-fa-pinterest-sign:before { content: "\f0d3"; }
+.ui-icon-fa-google-plus-sign:before { content: "\f0d4"; }
+.ui-icon-fa-google-plus:before { content: "\f0d5"; }
+.ui-icon-fa-money:before { content: "\f0d6"; }
+.ui-icon-fa-caret-down:before { content: "\f0d7"; }
+.ui-icon-fa-caret-up:before { content: "\f0d8"; }
+.ui-icon-fa-caret-left:before { content: "\f0d9"; }
+.ui-icon-fa-caret-right:before { content: "\f0da"; }
+.ui-icon-fa-columns:before { content: "\f0db"; }
+.ui-icon-fa-sort:before { content: "\f0dc"; }
+.ui-icon-fa-sort-down:before { content: "\f0dd"; }
+.ui-icon-fa-sort-up:before { content: "\f0de"; }
+.ui-icon-fa-envelope-alt:before { content: "\f0e0"; }
+.ui-icon-fa-linkedin:before { content: "\f0e1"; }
+.ui-icon-fa-undo:before { content: "\f0e2"; }
+.ui-icon-fa-legal:before { content: "\f0e3"; }
+.ui-icon-fa-dashboard:before { content: "\f0e4"; }
+.ui-icon-fa-comment-alt:before { content: "\f0e5"; }
+.ui-icon-fa-comments-alt:before { content: "\f0e6"; }
+.ui-icon-fa-bolt:before { content: "\f0e7"; }
+.ui-icon-fa-sitemap:before { content: "\f0e8"; }
+.ui-icon-fa-umbrella:before { content: "\f0e9"; }
+.ui-icon-fa-paste:before { content: "\f0ea"; }
+.ui-icon-fa-user-md:before { content: "\f200"; }

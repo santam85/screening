@@ -13,7 +13,10 @@ hs_err_pid*
 
 # IntelliJ IDEA files
 .idea
-.iml
+*.iml
 
 # Node.js files
 node_modules
+
+# Bower libs
+src/main/resources/static/vendor

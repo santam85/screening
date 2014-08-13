@@ -1,0 +1,29 @@
+{
+  "name": "screening",
+  "version": "0.1.0",
+  "homepage": "https://github.com/santam85/screening",
+  "authors": [
+    "Marco Santarelli <santa.85@gmail.com>"
+  ],
+  "main": "Gruntfile.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.14",
+    "jquery": "~2.1.1",
+    "jquery-mobile-bower": "~1.4.2"
+  },
+  "resolutions": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head th:include="index :: head">
-
+    <head th:replace="fragments/head :: head">
     </head>
     <body>
 
         <div id="login" data-role="page" data-add-back-btn="false">
-            <div th:replace="index :: header"></div>
+            <div th:replace="fragments/header :: header">
+
+            </div>
 
             <div data-role="content">
                 <p th:if="${param.logout}" class="alert alert-success">You have been logged out</p>
                 <p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
                 <h2>Login with Username and Password</h2>
-                <form name="form" th:action="@{/login}" action="/login" method="POST">
+                <form name="form" th:action="@{/login}" action="/login" method="POST" data-ajax="false">
 
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" value="" placeholder="email@domain.com" />

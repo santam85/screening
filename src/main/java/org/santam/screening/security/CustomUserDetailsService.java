@@ -1,6 +1,6 @@
 package org.santam.screening.security;
 
-import org.santam.screening.model.UsersEntity;
+import org.santam.screening.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        UsersEntity user = userRepository.findByEmail(username);
+        User user = userRepository.findByEmail(username);
 
         if (user == null) {
             throw new UsernameNotFoundException("Username "+username+" not found");

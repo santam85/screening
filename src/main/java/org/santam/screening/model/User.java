@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "users")
-public class UsersEntity {
+public class User {
     private int id;
     private String email;
     private String passwordhash;
@@ -25,7 +25,6 @@ public class UsersEntity {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -35,7 +34,6 @@ public class UsersEntity {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -45,7 +43,6 @@ public class UsersEntity {
     public String getPasswordhash() {
         return passwordhash;
     }
-
     public void setPasswordhash(String passwordhash) {
         this.passwordhash = passwordhash;
     }
@@ -55,7 +52,6 @@ public class UsersEntity {
     public String getSalt() {
         return salt;
     }
-
     public void setSalt(String salt) {
         this.salt = salt;
     }
@@ -65,7 +61,6 @@ public class UsersEntity {
     public Boolean getStatus() {
         return status;
     }
-
     public void setStatus(Boolean status) {
         this.status = status;
     }
@@ -75,7 +70,6 @@ public class UsersEntity {
     public String getRole() {
         return role;
     }
-
     public void setRole(String role) {
         this.role = role;
     }
@@ -85,7 +79,6 @@ public class UsersEntity {
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -95,7 +88,6 @@ public class UsersEntity {
     public String getCognome() {
         return cognome;
     }
-
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
@@ -105,7 +97,6 @@ public class UsersEntity {
     public Timestamp getLastlogged() {
         return lastlogged;
     }
-
     public void setLastlogged(Timestamp lastlogged) {
         this.lastlogged = lastlogged;
     }
@@ -115,44 +106,7 @@ public class UsersEntity {
     public Timestamp getDateCreated() {
         return dateCreated;
     }
-
     public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        UsersEntity that = (UsersEntity) o;
-
-        if (id != that.id) return false;
-        if (cognome != null ? !cognome.equals(that.cognome) : that.cognome != null) return false;
-        if (dateCreated != null ? !dateCreated.equals(that.dateCreated) : that.dateCreated != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (lastlogged != null ? !lastlogged.equals(that.lastlogged) : that.lastlogged != null) return false;
-        if (nome != null ? !nome.equals(that.nome) : that.nome != null) return false;
-        if (passwordhash != null ? !passwordhash.equals(that.passwordhash) : that.passwordhash != null) return false;
-        if (role != null ? !role.equals(that.role) : that.role != null) return false;
-        if (salt != null ? !salt.equals(that.salt) : that.salt != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (passwordhash != null ? passwordhash.hashCode() : 0);
-        result = 31 * result + (salt != null ? salt.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (role != null ? role.hashCode() : 0);
-        result = 31 * result + (nome != null ? nome.hashCode() : 0);
-        result = 31 * result + (cognome != null ? cognome.hashCode() : 0);
-        result = 31 * result + (lastlogged != null ? lastlogged.hashCode() : 0);
-        result = 31 * result + (dateCreated != null ? dateCreated.hashCode() : 0);
-        return result;
     }
 }

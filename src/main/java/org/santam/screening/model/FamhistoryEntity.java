@@ -1,46 +1,38 @@
 package org.santam.screening.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-/**
- * Created by marco on 10/08/14.
- */
 @Entity
 @Table(name = "famhistory")
-@IdClass(FamhistoryEntityPK.class)
 public class FamhistoryEntity {
-    private int id;
-    private int anagraficaId;
+
+    @EmbeddedId
+    private FamhistoryEntityPK id;
+
+    @Column(name = "fccr")
     private Boolean fccr;
+    @Column(name = "nccrgrado1")
     private Integer nccrgrado1;
+    @Column(name = "faltrigrado1")
     private Boolean faltrigrado1;
+    @Column(name = "tipoaltri")
     private String tipoaltri;
+    @Column(name = "fpa")
     private Boolean fpa;
+    @Column(name = "sindrome")
     private String sindrome;
+    @Column(name = "mutazioni")
     private String mutazioni;
 
-    @Id
-    @Column(name = "id")
-    public int getId() {
+    public FamhistoryEntityPK getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(FamhistoryEntityPK id) {
         this.id = id;
     }
 
-    @Id
-    @Column(name = "anagrafica_id")
-    public int getAnagraficaId() {
-        return anagraficaId;
-    }
-
-    public void setAnagraficaId(int anagraficaId) {
-        this.anagraficaId = anagraficaId;
-    }
-
-    @Basic
-    @Column(name = "fccr")
     public Boolean getFccr() {
         return fccr;
     }
@@ -49,8 +41,6 @@ public class FamhistoryEntity {
         this.fccr = fccr;
     }
 
-    @Basic
-    @Column(name = "nccrgrado1")
     public Integer getNccrgrado1() {
         return nccrgrado1;
     }
@@ -59,8 +49,6 @@ public class FamhistoryEntity {
         this.nccrgrado1 = nccrgrado1;
     }
 
-    @Basic
-    @Column(name = "faltrigrado1")
     public Boolean getFaltrigrado1() {
         return faltrigrado1;
     }
@@ -69,8 +57,6 @@ public class FamhistoryEntity {
         this.faltrigrado1 = faltrigrado1;
     }
 
-    @Basic
-    @Column(name = "tipoaltri")
     public String getTipoaltri() {
         return tipoaltri;
     }
@@ -79,8 +65,6 @@ public class FamhistoryEntity {
         this.tipoaltri = tipoaltri;
     }
 
-    @Basic
-    @Column(name = "fpa")
     public Boolean getFpa() {
         return fpa;
     }
@@ -89,8 +73,6 @@ public class FamhistoryEntity {
         this.fpa = fpa;
     }
 
-    @Basic
-    @Column(name = "sindrome")
     public String getSindrome() {
         return sindrome;
     }
@@ -99,8 +81,6 @@ public class FamhistoryEntity {
         this.sindrome = sindrome;
     }
 
-    @Basic
-    @Column(name = "mutazioni")
     public String getMutazioni() {
         return mutazioni;
     }
@@ -109,37 +89,31 @@ public class FamhistoryEntity {
         this.mutazioni = mutazioni;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    @Embeddable
+    public class FamhistoryEntityPK implements Serializable{
+        @GeneratedValue
+        @Column(name = "id")
+        private int id;
 
-        FamhistoryEntity that = (FamhistoryEntity) o;
+        @ManyToOne
+        @JoinColumn(name = "anagrafica_id", referencedColumnName = "id")
+        private Paziente paziente;
 
-        if (anagraficaId != that.anagraficaId) return false;
-        if (id != that.id) return false;
-        if (faltrigrado1 != null ? !faltrigrado1.equals(that.faltrigrado1) : that.faltrigrado1 != null) return false;
-        if (fccr != null ? !fccr.equals(that.fccr) : that.fccr != null) return false;
-        if (fpa != null ? !fpa.equals(that.fpa) : that.fpa != null) return false;
-        if (mutazioni != null ? !mutazioni.equals(that.mutazioni) : that.mutazioni != null) return false;
-        if (nccrgrado1 != null ? !nccrgrado1.equals(that.nccrgrado1) : that.nccrgrado1 != null) return false;
-        if (sindrome != null ? !sindrome.equals(that.sindrome) : that.sindrome != null) return false;
-        if (tipoaltri != null ? !tipoaltri.equals(that.tipoaltri) : that.tipoaltri != null) return false;
+        public int getId() {
+            return id;
+        }
+        public void setId(int id) {
+            this.id = id;
+        }
 
-        return true;
-    }
+        public Paziente getPaziente() {
+            return paziente;
+        }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + anagraficaId;
-        result = 31 * result + (fccr != null ? fccr.hashCode() : 0);
-        result = 31 * result + (nccrgrado1 != null ? nccrgrado1.hashCode() : 0);
-        result = 31 * result + (faltrigrado1 != null ? faltrigrado1.hashCode() : 0);
-        result = 31 * result + (tipoaltri != null ? tipoaltri.hashCode() : 0);
-        result = 31 * result + (fpa != null ? fpa.hashCode() : 0);
-        result = 31 * result + (sindrome != null ? sindrome.hashCode() : 0);
-        result = 31 * result + (mutazioni != null ? mutazioni.hashCode() : 0);
-        return result;
+        public void setPaziente(Paziente paziente) {
+            this.paziente = paziente;
+        }
     }
 }
+
+

@@ -1,8 +1,6 @@
 package org.santam.screening;
 
 import org.santam.screening.security.CustomPasswordEncoder;
-import org.santam.screening.security.CustomSaltSource;
-import org.santam.screening.security.CustomUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -15,37 +13,32 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
-import org.springframework.http.MediaType;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.authentication.dao.ReflectionSaltSource;
-import org.springframework.security.authentication.dao.SaltSource;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
-import org.springframework.security.config.annotation.SecurityBuilder;
-import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
-import org.springframework.security.config.annotation.authentication.configurers.userdetails.DaoAuthenticationConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.thymeleaf.spring4.SpringTemplateEngine;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Configuration
 @ComponentScan
-@EnableJpaRepositories
 @EnableAutoConfiguration
-//@EnableSpringDataWebSupport
 public class Application extends SpringBootServletInitializer {
     public static void main(String[] args){
         SpringApplication.run(Application.class, args);
     }
+
+    public static final String API_ROOT = "/api";
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -95,17 +88,32 @@ public class Application extends SpringBootServletInitializer {
             http.authorizeRequests()
                     .antMatchers("/resources/**").permitAll()
                     .antMatchers("/vendor/**").permitAll()
+                    .antMatchers("/error").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
                     .loginPage("/login").permitAll()
-                    .defaultSuccessUrl("/anagrafica")
                     .and()
                     .logout().permitAll();
         }
     }
 
     @Configuration
+    protected static class RestMvcConfiguration extends RepositoryRestMvcConfiguration {
+        @Override
+        protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+            super.configureRepositoryRestConfiguration(config);
+            try {
+                config.setBaseUri(new URI(API_ROOT));
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Configuration
+    @EnableJpaRepositories
+    @EnableSpringDataWebSupport
     protected static class WebMvcConfiguration extends WebMvcConfigurerAdapter {
         @Override
         public void addViewControllers(ViewControllerRegistry registry)

@@ -99,13 +99,13 @@
             <div data-role="content">
 
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
                 </c:if>
                 <c:if test="${not empty msg}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${msg}</p>
                     </div>
@@ -113,7 +113,7 @@
 
                 <ul data-role="listview" class="patient-list" data-inset="true" data-autodividers="true">
                     <c:forEach var="row" items="${rst.rows}">
-                        <li data-theme="d" style="overflow: auto;">
+                        <li style="overflow: auto;">
                             <h3>${row.nome} ${row.cognome}</h3>
                             <p><strong>E-mail: </strong>${row.email}</p>
                             <p><strong>Role: </strong>${row.role}</p>
@@ -125,14 +125,14 @@
 
                                 <form action="users.jsp" method="post" style="display: inline;">
                                     <input type="hidden" name="id" value="${row.id}" />
-                                    <button data-inline="true" data-mini="true" data-theme="e" action="submit" name="action" value="delete">Delete</button>
+                                    <button data-inline="true" data-mini="true" action="submit" name="action" value="delete">Delete</button>
 
                                     <c:choose>
                                         <c:when test="${row.status}">
-                                            <button data-inline="true" data-mini="true" data-theme="c" action="submit" name="action" value="disable">Disable</button>
+                                            <button data-inline="true" data-mini="true" action="submit" name="action" value="disable">Disable</button>
                                         </c:when>
                                         <c:otherwise>
-                                            <button data-inline="true" data-mini="true" data-theme="a" action="submit" name="action" value="enable">Enable</button>
+                                            <button data-inline="true" data-mini="true" action="submit" name="action" value="enable">Enable</button>
                                         </c:otherwise>
                                     </c:choose>
                                 </form>
@@ -140,7 +140,7 @@
                         </li>
                     </c:forEach>
                 </ul>
-                <div data-role="collapsible" data-inset="true" data-theme="a" data-content-theme="d">
+                <div data-role="collapsible" data-inset="true">
                     <h3>Add new user</h3>
                     <p>
                     <form action="users.jsp?_=${now.time}" method="post">
@@ -171,7 +171,7 @@
 
                         <div data-role="fieldcontain">
                             <label for="role">Role</label>
-                            <select id="role" name="role" >
+                            <select id="role" name="role">
                                 <option value="admin">Admin</option>
                                 <option value="user" data-placeholder="true">User</option>
                                 <option value="readonly">Read only</option>
@@ -186,7 +186,7 @@
                             </select> 
                         </div>
 
-                        <button type="submit" name="action" value="adduser" data-theme="b">Register</button>
+                        <button type="submit" name="action" value="adduser">Register</button>
                     </form>
                     </p>
                 </div>

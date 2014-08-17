@@ -21,7 +21,7 @@
         </sql:update>
     </c:if>
 
-    <sql:query var="rst" dataSource="jdbc/screening" >
+    <sql:query var="rst" dataSource="jdbc/screening">
         select * from esami where anagrafica_id=? order by dataesame
         <sql:param value="${param.anagrafica_id}" />
     </sql:query>
@@ -41,7 +41,7 @@
             <div data-role="content">
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" >
+                        <div data-role="collapsible" data-collapsed="false">
                             <h3>Error:</h3>
                             <p>${ex.localizedMessage}</p>
                         </div>
@@ -50,21 +50,21 @@
                         <div data-role="popup" id="type-popup">
                             <p>
                                 Selezionare il tipo di esame:
-                                <a href="exam-add-sof.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-theme="a" data-icon="plus">SOF</a>
-                                <a href="exam-add-ctv.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-theme="a" data-icon="plus">Colon TC Virtuale</a>
-                                <a href="exam-add-csc.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-theme="a" data-icon="plus">Colonscopia</a>
+                                <a href="exam-add-sof.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">SOF</a>
+                                <a href="exam-add-ctv.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">Colon TC Virtuale</a>
+                                <a href="exam-add-csc.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">Colonscopia</a>
                             <p>
                         </div>
 
-                        <ul data-role="listview" data-inset="true" >
-                            <li data-role="list-divider">Lista esami <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="#type-popup" data-rel="popup" data-role="button" data-theme="a" data-icon="plus" data-iconpos="notext">Inserimento nuovo esame</a></li>
+                        <ul data-role="listview" data-inset="true">
+                            <li data-role="list-divider">Lista esami <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="#type-popup" data-rel="popup" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo esame</a></li>
                             <c:choose>
                                 <c:when test="${rst.rowCount eq 0}">
-                                    <li data-theme="d">Nessun esame trovato.</li>
+                                    <li>Nessun esame trovato.</li>
                                 </c:when>
                                 <c:otherwise>
                                     <c:forEach var="row" items="${rst.rows}">
-                                        <li data-theme="d">
+                                        <li>
                                             <a href="exam-detail-${row.tipo}.jsp?id=${row.id}">
                                                 <h3><scr:decodeExamType>${row.tipo}</scr:decodeExamType></h3>
                                                 <p class="ui-li-aside"><strong>Data: </strong><fmt:formatDate value="${row.dataesame}" pattern="dd/MM/yyyy"/></p>
@@ -75,7 +75,7 @@
                             </c:choose>
 
                         </ul>
-                        <a href="#type-popup" data-rel="popup" data-role="button" data-theme="a" data-icon="plus" >Inserimento nuovo esame</a>
+                        <a href="#type-popup" data-rel="popup" data-role="button" data-icon="plus">Inserimento nuovo esame</a>
                     </c:otherwise>
                 </c:choose>
             </div>

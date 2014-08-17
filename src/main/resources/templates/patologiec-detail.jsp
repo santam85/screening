@@ -78,7 +78,7 @@
 
             <div data-role="content">
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
@@ -86,7 +86,7 @@
 
                 <h4><strong>Paziente:</strong> <a href="patient-detail.jsp?id=${rsanag.rows[0].id}">${rsanag.rows[0].nome} ${rsanag.rows[0].cognome}</a></h4>
 
-                <ul data-role="listview" data-inset="true" data-theme="d">
+                <ul data-role="listview" data-inset="true">
                     <li>
                         <h3>Tipo</h3>
                         <p class="ui-li-aside" style="margin: 0.6em 0; font-size: 16px;">${rs.rows[0].tipo}</p>
@@ -105,15 +105,15 @@
                     </li>
                 </ul>
 
-                <ul data-role="listview" data-inset="true" data-theme="d">
-                    <li data-role="list-divider">Terapie associate<a class="ui-li-count" style="font-size: 14px;padding: 0;" href="terapie-add.jsp?anagrafica_id=${rs.rows[0].anagrafica_id}&patologiec_id=${param.id}" data-role="button" data-theme="a" data-icon="plus" data-iconpos="notext">Inserimento nuova terapia</a></li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Terapie associate<a class="ui-li-count" style="font-size: 14px;padding: 0;" href="terapie-add.jsp?anagrafica_id=${rs.rows[0].anagrafica_id}&patologiec_id=${param.id}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova terapia</a></li>
                     <c:choose>
                         <c:when test="${rster.rowCount eq 0}">
-                            <li data-theme="d">Nessuna terapia trovata.</li>
+                            <li>Nessuna terapia trovata.</li>
                         </c:when>
                         <c:otherwise>
                             <c:forEach var="row" items="${rster.rows}">
-                                <li data-theme="d">
+                                <li>
                                     <a href="terapie-detail.jsp?id=${row.id}">
                                         <h3>${row.tipo}</h3>
                                         <p>${row.descrizione}</p>
@@ -129,11 +129,11 @@
                     <div class="ui-block-a">
                         <form action="patient-detail.jsp?id=${rs.rows[0].anagrafica_id}" method="post">
                             <input type="hidden" name="patologiec_id" value="${param.id}">
-                            <button type="submit" name="action" value="deletepatologiac" data-icon="delete" data-iconpos="left" data-theme="e">Delete</button>
+                            <button type="submit" name="action" value="deletepatologiac" data-icon="delete" data-iconpos="left">Delete</button>
                         </form>
                     </div>
                     <div class="ui-block-b">
-                        <a href="patologiec-edit.jsp?id=${param.id}" data-role="button" data-icon="gear" data-iconpos="right" data-theme="b">Edit</a>
+                        <a href="patologiec-edit.jsp?id=${param.id}" data-role="button" data-icon="gear" data-iconpos="right">Edit</a>
                     </div>
                 </div>
             </div>

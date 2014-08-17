@@ -45,7 +45,7 @@
         <div data-role="content">
             <c:choose>
                 <c:when test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${ex.localizedMessage}</p>
                     </div> 
@@ -56,12 +56,12 @@
                         <h4><strong>Paziente:</strong> <a href="patient-detail.jsp?id=${rs.rows[0].anagrafica_id}">${rs.rows[0].nome} ${rs.rows[0].cognome}</a></h4>
                         <h5><scr:decodeExamType>${rs.rows[0].tipo}</scr:decodeExamType> in data <fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" /></h5>
 
-                            <div data-role="fieldcontain" >
+                            <div data-role="fieldcontain">
                                 <label for="dataesame">Data esame</label>
                                 <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                         </div>
 
-                        <div data-role="fieldcontain" >
+                        <div data-role="fieldcontain">
                             <label for="completamento">Completamento diagnostico</label>
                             <select id="completamento" name="completamento" data-mini="true">
                                 <option value="">Esame indipendente</option>
@@ -110,15 +110,15 @@
                         </div>
 
                         <h3>Polipi</h3>
-                        <ul data-role="listview" data-inset="true" data-theme="d">
+                        <ul data-role="listview" data-inset="true">
                             <li data-role="list-divider">Polipi <span class="ui-li-count"> <fmt:formatNumber value="${rspol.rowCount}" maxFractionDigits="0" /> ${rspol.rowCount>1?"polipi":"polipo"} </span></li>
                             <c:choose>
                                 <c:when test="${rspol.rowCount eq 0}">
-                                    <li data-theme="d">Nessun polipo.</li>
+                                    <li>Nessun polipo.</li>
                                 </c:when>
                                 <c:otherwise>
                                     <c:forEach var="row" items="${rspol.rows}">
-                                        <li data-theme="d">
+                                        <li>
                                             <h3>Tipo: <span style="font-weight: normal;">${row.tipo}</span></h3>
                                             <p><strong>Grado di displasia: </strong>${row.displasia}</p>
                                             <p>${row.istologia}</p>
@@ -143,7 +143,7 @@
                         </div>
 
                         <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup" data-mini="true" >
+                            <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Sede cancro</legend>
                                 <label for="sedecancro_cieco">Cieco</label>
                                 <input type="checkbox" name="sedecancro_cieco" id="sedecancro_cieco" ${rs.rows[0].sedecancro_cieco?'checked="true"':''} />
@@ -181,8 +181,8 @@
 
                         <div data-role="fieldcontain">
                             <label for="intervento">Intervento Chirurgico</label>
-                            <select name="intervento" id="intervento" data-mini="true" >
-                                <option value="" >Nessuno</option>
+                            <select name="intervento" id="intervento" data-mini="true">
+                                <option value="">Nessuno</option>
                                 <option value="Emicolectomia DX" ${rs.rows[0].intervento eq 'Emicolectomia DX'?'selected="selected"':''} >Emicolectomia DX</option>
                                 <option value="Emicolectomia SX" ${rs.rows[0].intervento eq 'Emicolectomia SX'?'selected="selected"':''}>Emicolectomia SX</option>
                                 <option value="Ileo-Retto Anastomosi" ${rs.rows[0].intervento eq 'Ileo-Retto Anastomosi'?'selected="selected"':''}>Ileo-Retto Anastomosi</option>
@@ -198,8 +198,8 @@
                         </div>
                         <div data-role="fieldcontain">
                             <label for="mutazioni">Mutazioni</label>
-                            <select name="mutazioni" id="mutazioni" data-mini="true" >
-                                <option value="" >Nessuno</option>
+                            <select name="mutazioni" id="mutazioni" data-mini="true">
+                                <option value="">Nessuno</option>
                                 <option value="MSI" ${rs.rows[0].mutazioni eq 'MSI'?'selected="selected"':''} >MSI</option>
                                 <option value="BRAF" ${rs.rows[0].mutazioni eq 'BRAF'?'selected="selected"':''}>BRAF</option>
                                 <option value="KRAS 12" ${rs.rows[0].mutazioni eq 'KRAS 12'?'selected="selected"':''}>KRAS 12</option>
@@ -232,15 +232,15 @@
 
                         <div data-role="fieldcontain" class="othercfieldcontain" ${empty rs.rows[0].altric?'style="display:none;"':''}>
                             <label for="altric">Descrizione:</label>
-                            <textarea name="altric" id="altric" data-mini="true" >${rs.rows[0].altric}</textarea>
+                            <textarea name="altric" id="altric" data-mini="true">${rs.rows[0].altric}</textarea>
                         </div>
 
                         <div class="ui-grid-a"  >
                             <div class="ui-block-a">
-                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                             </div>
                             <div class="ui-block-b">
-                                <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                                <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right">Save</button>
                             </div>
                         </div>
                     </form>

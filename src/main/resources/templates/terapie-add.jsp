@@ -47,8 +47,8 @@
                        
                     <div data-role="fieldcontain">
                         <label for="tipo">Tipo:</label>
-                        <select name="tipo" id="tipo" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="tipo" id="tipo" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="Cardio ASA" ${param.tipo eq 'Cardio ASA'?'selected="selected"':''} >Cardio ASA</option>
                             <option value="Aspirina" ${param.tipo eq 'Aspirina'?'selected="selected"':''} >Aspirina</option>
                             <option value="Altri FANS" ${param.tipo eq 'Altri FANS'?'selected="selected"':''}>Altri FANS</option>
@@ -64,18 +64,18 @@
                         <textarea name="descrizione" id="descrizione" data-mini="true" required >${param.descrizione}</textarea>
                     </div>
 
-                    <div data-role="fieldcontain" >
+                    <div data-role="fieldcontain">
                         <label for="inizio">Data inizio terapia</label>
                         <input type="date" name="inizio" id="inizio" value="<fmt:formatDate value="${param.inizio}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain" >
+                    <div data-role="fieldcontain">
                         <label for="fine">Data fine terapia</label>
                         <input type="date" name="fine" id="fine" value="<fmt:formatDate value="${param.fine}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
                     <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-mini="true" >
+                        <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Patologie relative</legend>
                             <c:forEach var="row" items="${rspcon.rows}" varStatus="i">
                                 <label for="patologiac-${i.index}">[${row.id}] ${row.tipo} - ${row.descrizione} (${row.sindrome}/${row.mutazioni})</label>
@@ -86,10 +86,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="addterapia" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="addterapia" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

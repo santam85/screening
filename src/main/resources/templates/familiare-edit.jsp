@@ -73,8 +73,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="sindrome">Sindrome:</label>
-                        <select name="sindrome" id="sindrome" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="sindrome" id="sindrome" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="FAP" ${rs.rows[0].sindrome eq 'FAP'?'selected="selected"':''} >FAP</option>
                             <option value="AFAP" ${rs.rows[0].sindrome eq 'AFAP'?'selected="selected"':''}>AFAP</option>
                             <option value="LYNCH" ${rs.rows[0].sindrome eq 'LYNCH'?'selected="selected"':''}>LYNCH</option>
@@ -92,10 +92,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

@@ -38,7 +38,7 @@
         <div data-role="content">
             <c:choose>
                 <c:when test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${ex.localizedMessage}</p>
                     </div> 
@@ -50,12 +50,12 @@
 
                         <input type="hidden" name="tipo" value="csc"/>
 
-                        <div data-role="fieldcontain" >
+                        <div data-role="fieldcontain">
                             <label for="dataesame">Data esame</label>
                             <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${param.dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                         </div>
 
-                        <div data-role="fieldcontain" >
+                        <div data-role="fieldcontain">
                             <label for="completamento">Completamento diagnostico</label>
                             <select id="completamento" name="completamento" data-mini="true">
                                 <option value="">Esame indipendente</option>
@@ -116,7 +116,7 @@
                         </div>
 
                         <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup" data-mini="true" >
+                            <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Sede cancro</legend>
                                 <label for="sedecancro_cieco">Cieco</label>
                                 <input type="checkbox" name="sedecancro_cieco" id="sedecancro_cieco" ${param.sedecancro_cieco?'checked="true"':''} />
@@ -154,8 +154,8 @@
 
                         <div data-role="fieldcontain">
                             <label for="intervento">Intervento Chirurgico</label>
-                            <select name="intervento" id="intervento" data-mini="true" >
-                                <option value="" >Nessuno</option>
+                            <select name="intervento" id="intervento" data-mini="true">
+                                <option value="">Nessuno</option>
                                 <option value="Emicolectomia DX" ${param.intervento eq 'Emicolectomia DX'?'selected="selected"':''} >Emicolectomia DX</option>
                                 <option value="Emicolectomia SX" ${param.intervento eq 'Emicolectomia SX'?'selected="selected"':''}>Emicolectomia SX</option>
                                 <option value="Ileo-Retto Anastomosi" ${param.intervento eq 'Ileo-Retto Anastomosi'?'selected="selected"':''}>Ileo-Retto Anastomosi</option>
@@ -171,8 +171,8 @@
                         </div>
                         <div data-role="fieldcontain">
                             <label for="mutazioni">Mutazioni</label>
-                            <select name="mutazioni" id="mutazioni" data-mini="true" >
-                                <option value="" >Nessuno</option>
+                            <select name="mutazioni" id="mutazioni" data-mini="true">
+                                <option value="">Nessuno</option>
                                 <option value="MSI" ${param.mutazioni eq 'MSI'?'selected="selected"':''} >MSI</option>
                                 <option value="BRAF" ${param.mutazioni eq 'BRAF'?'selected="selected"':''}>BRAF</option>
                                 <option value="KRAS 12" ${param.mutazioni eq 'KRAS 12'?'selected="selected"':''}>KRAS 12</option>
@@ -198,22 +198,22 @@
                         <div data-role="fieldcontain">
                             <label for="othercslider">Altri:</label>
                             <select id="othercslider" class="othercslider" data-role="slider" data-mini="true">
-                                <option value="No" >No</option>
+                                <option value="No">No</option>
                                 <option value="Si" selected="true">Si</option>
                             </select>
                         </div>
                         
                         <div data-role="fieldcontain" class="othercfieldcontain">
                             <label for="altric">Descrizione:</label>
-                            <textarea name="altric" id="altric" data-mini="true" ></textarea>
+                            <textarea name="altric" id="altric" data-mini="true"></textarea>
                         </div>
 
                         <div class="ui-grid-a"  >
                             <div class="ui-block-a">
-                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                             </div>
                             <div class="ui-block-b">
-                                <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                                <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right">Save</button>
                             </div>
                         </div>
                     </form>

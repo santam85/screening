@@ -154,7 +154,7 @@
 
             <div data-role="content">
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
@@ -163,7 +163,7 @@
                 <h4><strong>Paziente:</strong> <a href="patient-detail.jsp?id=${rs.rows[0].anagrafica_id}">${rs.rows[0].nome} ${rs.rows[0].cognome}</a></h4>
                 <h5><scr:decodeExamType>${rs.rows[0].tipo}</scr:decodeExamType> in data <fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" /></h5>
 
-                    <ul data-role="listview" data-inset="true" data-theme="d">
+                    <ul data-role="listview" data-inset="true">
                         <li>
                             <h3>Tipo</h3>
                             <p class="ui-li-aside" style="margin: 0.6em 0; font-size: 16px;"><scr:decodeExamType>${rs.rows[0].tipo}</scr:decodeExamType></p>
@@ -181,7 +181,7 @@
                         <sql:param value="${rs.rows[0].completamento}" />
                     </sql:query>
                     <c:if test="${rsc.rowCount > 0}">
-                        <li data-theme="a">
+                        <li>
                             <a href="exam-detail-${rsc.rows[0].tipo}.jsp?id=${rs.rows[0].completamento}">Questo esame completa la <scr:decodeExamType>${rsc.rows[0].tipo}</scr:decodeExamType> in data <fmt:formatDate value="${rsc.rows[0].dataesame}" pattern="dd/MM/yyyy" /></a>
                             </li> 
                     </c:if>
@@ -190,14 +190,14 @@
                         <sql:param value="${param.id}" />
                     </sql:query>
                     <c:if test="${rse.rowCount > 0}">
-                        <li data-theme="a">
+                        <li>
                             <a href="exam-detail-${rse.rows[0].tipo}.jsp?id=${rse.rows[0].id}">Questo esame è completato dalla <scr:decodeExamType>${rse.rows[0].tipo}</scr:decodeExamType> in data <fmt:formatDate value="${rse.rows[0].dataesame}" pattern="dd/MM/yyyy" /></a>
                             </li> 
                     </c:if>
                 </ul>
                 <h4>Dati esame</h4>    
-                <ul data-role="listview" data-inset="true" data-theme="d">
-                    <li data-role="list-divider" >Generali</li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Generali</li>
                      <li>
                         <h3>Pulizia</h3>
                         <p class="ui-li-aside" style="margin: 0.6em 0; font-size: 16px;">${rs.rows[0].pulizia}</p>
@@ -215,8 +215,8 @@
                     </li>
                 </ul>
 
-                <ul data-role="listview" data-inset="true" data-theme="d">
-                    <li data-role="list-divider" >Esami di laboratorio</li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Esami di laboratorio</li>
                     <li>
                         <h3>Glicemia</h3>
                         <p class="ui-li-aside" style="margin: 0.6em 0; font-size: 16px;">${rs.rows[0].glicemia}</p>
@@ -236,15 +236,15 @@
                 </ul>
 
 
-                <ul data-role="listview" data-inset="true" data-theme="d">
-                    <li data-role="list-divider">Polipi <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="exam-detail-csc-addpolipo.jsp?esami_id=${param.id}" data-role="button" data-theme="a" data-icon="plus" data-iconpos="notext">Inserimento nuovo polipo</a> <span class="ui-li-count" style="margin-right: 3em;"> <fmt:formatNumber value="${rspol.rowCount}" maxFractionDigits="0" /> polipi </span></li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Polipi <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="exam-detail-csc-addpolipo.jsp?esami_id=${param.id}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo polipo</a> <span class="ui-li-count" style="margin-right: 3em;"> <fmt:formatNumber value="${rspol.rowCount}" maxFractionDigits="0" /> polipi </span></li>
                     <c:choose>
                         <c:when test="${rspol.rowCount eq 0}">
-                            <li data-theme="d">Nessun polipo.</li>
+                            <li>Nessun polipo.</li>
                         </c:when>
                         <c:otherwise>
                             <c:forEach var="row" items="${rspol.rows}">
-                                <li data-theme="d">
+                                <li>
                                     <h3>Tipo: <span style="font-weight: normal;">${row.tipo}</span></h3>
                                     <p><strong>Grado di displasia: </strong>${row.displasia}</p>
                                     <p>${row.istologia}</p>
@@ -260,11 +260,11 @@
                                         <div class="ui-block-b">
                                             <form action="exam-detail-csc.jsp?id=${param.id}" method="post" style="display: inline;">
                                                 <input type="hidden" name="polipo_id" value="${row.id}"/>
-                                                <button data-inline="true" data-mini="true" data-theme="e" action="submit" name="action" value="deletepolipo">Elimina</button>
+                                                <button data-inline="true" data-mini="true" action="submit" name="action" value="deletepolipo">Elimina</button>
                                             </form>
                                             <form action="exam-detail-csc-editpolipo.jsp?esami_id=${param.id}" method="post" style="display: inline;">
                                                 <input type="hidden" name="polipo_id" value="${row.id}"/>
-                                                <button data-inline="true" data-mini="true" data-theme="c" action="submit" name="action">Modifica</button>
+                                                <button data-inline="true" data-mini="true" action="submit" name="action">Modifica</button>
                                             </form>
                                         </div>
                                     </div>
@@ -275,8 +275,8 @@
                     </c:choose>
                 </ul>
 
-                <ul data-role="listview" data-inset="true" data-theme="d">
-                    <li data-role="list-divider" >Cancro</li>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Cancro</li>
                     <li>
                         <h3>Cancro</h3>
                         <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
@@ -287,7 +287,7 @@
 
                     <li style="overflow:auto;">
                         <h3>Sede cancro</h3>
-                        <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside" >
+                        <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
                             <label for="sedecancro_cieco">Cieco</label>
                             <input type="checkbox" name="sedecancro_cieco" id="sedecancro_cieco" ${rs.rows[0].sedecancro_cieco?'checked="true"':''} disabled />
                             <label for="sedecancro_ascendente">Ascendente</label>
@@ -355,11 +355,11 @@
                     <div class="ui-block-a">
                         <form action="exam-list.jsp?anagrafica_id=${rs.rows[0].anagrafica_id}" method="post">
                             <input type="hidden" name="id" id="id" value="${param.id}">
-                            <button type="submit" name="action" value="delete" data-icon="delete" data-iconpos="left" data-theme="e">Delete</button>
+                            <button type="submit" name="action" value="delete" data-icon="delete" data-iconpos="left">Delete</button>
                         </form>
                     </div>
                     <div class="ui-block-b">
-                        <a href="exam-edit-csc.jsp?id=${rs.rows[0].esami_id}" data-role="button" data-icon="gear" data-iconpos="right" data-theme="b">Edit</a>
+                        <a href="exam-edit-csc.jsp?id=${rs.rows[0].esami_id}" data-role="button" data-icon="gear" data-iconpos="right">Edit</a>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
         </c:when>
     </c:choose>
 
-    <sql:query dataSource="jdbc/screening" var="rs" >
+    <sql:query dataSource="jdbc/screening" var="rs">
         select * from note join users on note.users_id = users.id
     </sql:query>
 </c:catch>
@@ -52,13 +52,13 @@
             <div data-role="content">
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" >
+                        <div data-role="collapsible" data-collapsed="false">
                             <h3>Error:</h3>
                             <p>${ex.localizedMessage}</p>
                         </div>
                     </c:when>
                     <c:otherwise>
-                        <div data-role="popup" id="note-add-popup" data-theme="d" data-overlay-theme="a" data-position-to="li">
+                        <div data-role="popup" id="note-add-popup" data-overlay-theme="b" data-position-to="li">
                             <div style="padding:10px 20px; width: 500px;">
                                 <form method="post" action="note.jsp">
                                     <div data-role="fieldcontain">
@@ -75,10 +75,10 @@
 
                                     <div class="ui-grid-a"  >
                                         <div class="ui-block-a">
-                                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                                         </div>
                                         <div class="ui-block-b">
-                                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right">Save</button>
                                         </div>
                                     </div>
                                 </form>
@@ -86,14 +86,14 @@
                         </div>
 
                         <ul data-role="listview" data-inset="true" data-filter="true">
-                            <li data-role="list-divider">Lista note <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="#note-add-popup" data-rel="popup" data-role="button" data-theme="a" data-icon="plus" data-iconpos="notext">Inserimento nuova nota</a></li>
+                            <li data-role="list-divider">Lista note <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="#note-add-popup" data-rel="popup" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova nota</a></li>
                             <c:choose>
                                 <c:when test="${rs.rowCount eq 0}">
-                                    <li data-theme="d">Nessuna nota.</li>
+                                    <li>Nessuna nota.</li>
                                 </c:when>
                                 <c:otherwise>
                                     <c:forEach var="row" items="${rs.rows}">
-                                        <li data-theme="d" style="overflow: auto;">
+                                        <li style="overflow: auto;">
                                             <h3>${row.subject}</h3>
                                             <p style="white-space: normal;">${row.text}</p>
                                             <div class="ui-li-aside ui-li-desc">
@@ -102,7 +102,7 @@
                                                 <strong>Data ultima modifica: </strong><fmt:formatDate value="${row.date_modified}" pattern="dd/MM/yyyy"/><br/>
                                                 <form action="note.jsp" method="post" style="display: inline;text-align: right">
                                                     <input type="hidden" name="note_id" value="${row.id}"/>
-                                                    <button data-inline="true" data-mini="true" data-theme="e" action="submit" name="action" value="delete" >Elimina</button>
+                                                    <button data-inline="true" data-mini="true" action="submit" name="action" value="delete">Elimina</button>
                                                 </form>
                                             </div>
                                         </li>
@@ -110,7 +110,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </ul>
-                        <a href="#note-add-popup" data-rel="popup" data-role="button" data-theme="a" data-icon="plus" >Inserimento nuova nota</a>
+                        <a href="#note-add-popup" data-rel="popup" data-role="button" data-icon="plus">Inserimento nuova nota</a>
                     </c:otherwise>
                 </c:choose>
             </div>

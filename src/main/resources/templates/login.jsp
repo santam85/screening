@@ -62,7 +62,7 @@
         </c:when>
 
         <c:otherwise>
-            <c:if test="${not empty sessionScope.user}" >
+            <c:if test="${not empty sessionScope.user}">
                 <c:choose>
                     <c:when test="${not empty param.redirect}">
                         <c:redirect url="${param.redirect}"/>
@@ -95,13 +95,13 @@
             <div data-role="content">
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>Error:</h3>
                             <p>${ex.localizedMessage}</p>
                         </div>
                     </c:when>
                     <c:when test="${not empty msg}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>Error:</h3>
                             <p>${msg}</p>
                         </div>
@@ -118,10 +118,10 @@
 
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
-                            <a data-role="button" href="register.jsp" data-icon="plus" data-iconpos="left" data-theme="c">Register</a>
+                            <a data-role="button" href="register.jsp" data-icon="plus" data-iconpos="left">Register</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="login" data-theme="b">Login</button>
+                            <button type="submit" name="action" value="login">Login</button>
                         </div>
                     </div>
                 </form>

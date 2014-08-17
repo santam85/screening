@@ -31,7 +31,7 @@
         <div data-role="content">
             <c:choose>
                 <c:when test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${ex.localizedMessage}</p>
                     </div> 
@@ -69,7 +69,7 @@
                                 </select>
                             </div>
 
-                            <div data-role="fieldcontain" >
+                            <div data-role="fieldcontain">
                                 <label for="datanascita">Data di nascita:</label>
                                 <input type="date" name="datanascita" id="datanascita" value="<fmt:formatDate value="${rs.rows[0].datanascita}" pattern="dd/MM/yyyy"/>" data-mini="true" data-role="datebox" />
                         </div>
@@ -121,10 +121,10 @@
 
                         <div class="ui-grid-a"  >
                             <div class="ui-block-a">
-                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                             </div>
                             <div class="ui-block-b">
-                                <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                                <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right">Save</button>
                             </div>
                         </div>
                     </form>

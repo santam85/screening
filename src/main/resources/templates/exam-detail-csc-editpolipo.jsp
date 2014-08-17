@@ -39,7 +39,7 @@
 
             <div data-role="content">
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
@@ -59,7 +59,7 @@
 
                     <div data-role="fieldcontain">
                         <label for="tipo">Tipo polipo</label>
-                        <select name="tipo" id="tipo" data-mini="true" >
+                        <select name="tipo" id="tipo" data-mini="true">
                             <option value="" ${rspol.rows[0].tipo eq ""?'selected="selected"':''}>Nessuno</option>
                             <option value="Flat" ${rspol.rows[0].tipo eq "Flat"?'selected="selected"':''}>Flat</option>
                             <option value="Sessile" ${rspol.rows[0].tipo eq "Sessile"?'selected="selected"':''}>Sessile</option>
@@ -69,7 +69,7 @@
 
                     <div data-role="fieldcontain">
                         <label for="sede">Sede polipo</label>
-                        <select name="sede" id="sede" data-mini="true" >
+                        <select name="sede" id="sede" data-mini="true">
                             <option value=""  ${rspol.rows[0].sede eq ""?'selected="selected"':''}>Nessuno</option>
                             <option value="Cieco" ${rspol.rows[0].sede eq "Cieco"?'selected="selected"':''}>Cieco</option>
                             <option value="Ascendente" ${rspol.rows[0].sede eq "Ascendente"?'selected="selected"':''}>Ascendente</option>                           
@@ -84,7 +84,7 @@
 
                     <div data-role="fieldcontain">
                         <label for="istologia">Istologia</label>
-                        <textarea name="istologia" id="istologia" data-mini="true" >${rspol.rows[0].istologia}</textarea>
+                        <textarea name="istologia" id="istologia" data-mini="true">${rspol.rows[0].istologia}</textarea>
                     </div>    
 
                     <div data-role="fieldcontain">
@@ -94,10 +94,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="savepolipo" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="savepolipo" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

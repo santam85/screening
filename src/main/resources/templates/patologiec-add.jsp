@@ -44,8 +44,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="tipo">Tipo:</label>
-                        <select name="tipo" id="tipo" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="tipo" id="tipo" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="Ipertensione" ${param.tipo eq 'Ipertensione'?'selected="selected"':''} >Ipertensione</option>
                             <option value="Dislipidemia" ${param.tipo eq 'Dislipidemia'?'selected="selected"':''}>Dislipidemia</option>
                             <option value="Diabete" ${param.tipo eq 'Diabete'?'selected="selected"':''}>Diabete</option>
@@ -62,8 +62,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="sindrome">Sindrome:</label>
-                        <select name="sindrome" id="sindrome" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="sindrome" id="sindrome" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="FAP" ${param.tipo eq 'FAP'?'selected="selected"':''} >FAP</option>
                             <option value="AFAP" ${param.tipo eq 'AFAP'?'selected="selected"':''}>AFAP</option>
                             <option value="LYNCH" ${param.tipo eq 'LYNCH'?'selected="selected"':''}>LYNCH</option>
@@ -84,10 +84,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="addpatologiac" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="addpatologiac" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

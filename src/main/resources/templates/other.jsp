@@ -25,7 +25,7 @@
         <div data-role="content">
             <ul data-role="listview" data-inset="true">
                 <li data-icon="gear">
-                    <a href="settings.jsp" >Settings</a>
+                    <a href="settings.jsp">Settings</a>
                 </li>
                 <c:if test="${sessionScope.user.role.equalsIgnoreCase('admin')}">
                 <li data-icon="fa-user">
@@ -39,13 +39,13 @@
                 </li>
                 </c:if>
                 <li data-icon="fa-time">
-                    <a href="#" >Stats</a>
+                    <a href="#">Stats</a>
                 </li>
                 <li data-icon="fa-bar-chart">
-                    <a href="#" >Charts</a>
+                    <a href="#">Charts</a>
                 </li>
                 <li data-icon="fa-bar-chart">
-                    <a href="note.jsp" >Notes</a>
+                    <a href="note.jsp">Notes</a>
                 </li>
                 
             </ul>

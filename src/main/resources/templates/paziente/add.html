@@ -37,7 +37,7 @@
                     <div data-role="fieldcontain">
                         <label for="screeningslider">Screening:</label>
                         <select id="screeningslider" class="screeningslider" data-role="slider" data-mini="true">
-                            <option value="No" >No</option>
+                            <option value="No">No</option>
                             <option value="Si" selected="true">Si</option>
                         </select>
                     </div>
@@ -70,7 +70,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain" >
+                    <div data-role="fieldcontain">
                         <label for="datanascita">Data di nascita:</label>
                         <input type="date" name="datanascita" id="datanascita" value="${param.datanascita}" data-mini="true" data-role="datebox" required/>
                     </div>
@@ -85,8 +85,8 @@
                         <input type="text" name="nazionenascita" id="nazionenascita" value="${param.nazionenascita}" data-mini="true" required/>
                     </div>
 
-                    <div data-role="collapsible-set" data-theme="a">
-                        <div data-role="collapsible" data-content-theme="d">
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
                             <h3>Antropom</h3>
                             <p>
                             <div data-role="fieldcontain">
@@ -101,9 +101,7 @@
                             </p>
                         </div>
 
-
-
-                        <div data-role="collapsible" data-content-theme="d">
+                        <div data-role="collapsible">
                             <h3>Stile di vita</h3>
                             <p>
                             <div data-role="fieldcontain">
@@ -133,10 +131,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

@@ -38,7 +38,7 @@
 
             <div data-role="content">
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error:</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
@@ -49,12 +49,12 @@
 
                     <input type="hidden" name="tipo" value="ctv"/>
 
-                    <div data-role="fieldcontain" >
+                    <div data-role="fieldcontain">
                         <label for="dataesame">Data esame</label>
                         <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain" >
+                    <div data-role="fieldcontain">
                         <label for="completamento">Completamento diagnostico</label>
                         <select id="completamento" name="completamento" data-mini="true">
                             <option value="">Esame indipendente</option>
@@ -66,7 +66,7 @@
 
                     <div data-role="fieldcontain">
                         <label for="pulizia">Pulizia</label>
-                        <select name="pulizia" id="pulizia" data-mini="true" >
+                        <select name="pulizia" id="pulizia" data-mini="true">
                             <option value="Nessun residuo" ${rs.rows[0].pulizia eq 'Nessun residuo'?'selected="selected"':''} >Nessun residuo</option>
                             <option value="Residui fluidi" ${rs.rows[0].pulizia eq 'Residui fluidi'?'selected="selected"':''}>Residui fluidi</option>
                             <option value="Residui solidi" ${rs.rows[0].pulizia eq 'Residui solidi'?'selected="selected"':''}>Residui solidi</option>
@@ -83,8 +83,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="tipolesioni">Tipo lesioni</label>
-                        <select name="tipolesioni" id="tipolesioni" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="tipolesioni" id="tipolesioni" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="Flat" ${rs.rows[0].tipolesioni eq 'Flat'?'selected="selected"':''} >Flat</option>
                             <option value="Sessile" ${rs.rows[0].tipolesioni eq 'Sessile'?'selected="selected"':''}>Sessile</option>
                             <option value="Peduncolato" ${rs.rows[0].tipolesioni eq 'Peduncolato'?'selected="selected"':''}>Peduncolato</option>
@@ -92,7 +92,7 @@
                     </div>
 
                     <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-mini="true" >
+                        <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Sede cancro</legend>
                             <label for="sedecancro_cieco">Cieco</label>
                             <input type="checkbox" name="sedecancro_cieco" id="sedecancro_cieco" ${rs.rows[0].sedecancro_cieco?'checked="true"':''} />
@@ -120,10 +120,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="add" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

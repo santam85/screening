@@ -35,7 +35,7 @@
 
             <div data-role="content">
                 <c:if test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                         <h3>Error</h3>
                         <p>${ex.localizedMessage}</p>
                     </div>
@@ -53,8 +53,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="tipo">Tipo polipo</label>
-                        <select name="tipo" id="tipo" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="tipo" id="tipo" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="Flat">Flat</option>
                             <option value="Sessile">Sessile</option>
                             <option value="Peduncolato">Peduncolato</option>
@@ -63,8 +63,8 @@
 
                     <div data-role="fieldcontain">
                         <label for="sede">Sede polipo</label>
-                        <select name="sede" id="sede" data-mini="true" >
-                            <option value="" >Nessuno</option>
+                        <select name="sede" id="sede" data-mini="true">
+                            <option value="">Nessuno</option>
                             <option value="Cieco">Cieco</option>
                             <option value="Ascendente">Ascendente</option> 
                             <option value="Ascendente">Discendente</option>  
@@ -78,7 +78,7 @@
                     
                     <div data-role="fieldcontain">
                         <label for="istologia">Istologia</label>
-                        <textarea name="istologia" id="istologia" data-mini="true" ></textarea>
+                        <textarea name="istologia" id="istologia" data-mini="true"></textarea>
                     </div>    
                     
                     <div data-role="fieldcontain">
@@ -89,10 +89,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left" data-theme="c">Cancel</a>
+                            <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="addpolipo" data-icon="check" data-iconpos="right" data-theme="b">Save</button>
+                            <button type="submit" name="action" value="addpolipo" data-icon="check" data-iconpos="right">Save</button>
                         </div>
                     </div>
                 </form>

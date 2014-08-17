@@ -10,14 +10,11 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.ResourceAssembler;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -47,33 +44,20 @@ public class PazienteController {
         return strings;
     }
 
-    @RequestMapping(value = "/paziente", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-    public @ResponseBody
-    PagedResources<Resource<Paziente>> getAllPatients(@PageableDefault(size = 10) Pageable p, PagedResourcesAssembler<Paziente> assembler) {
-        return assembler.toResource(pazienti.findAll(p));
-    }
-
-    @RequestMapping(value = "/paziente", produces = { MediaType.TEXT_HTML_VALUE })
+    @RequestMapping(value = "/paziente")
     public String getAllPatientsView(@PageableDefault(size = 10) Pageable p, PagedResourcesAssembler<Paziente> assembler, Model model){
-        PagedResources<Resource<Paziente>> pr = getAllPatients(p, assembler);
+        PagedResources<Resource<Paziente>> pr = assembler.toResource(pazienti.findAll(p));
         model.addAttribute(pr);
 
         model.addAttribute("prevLink",pr.getPreviousLink()!=null?pr.getPreviousLink().getHref():"");
         model.addAttribute("nextLink",pr.getNextLink()!=null?pr.getNextLink().getHref():"");
 
-        return "index";
+        return "paziente/list";
     }
 
-    @RequestMapping(value = "/paziente/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-    public @ResponseBody
-    Resource<Paziente> getPaziente(@PathVariable Integer id, ResourceAssembler<Paziente, Resource<Paziente>> assembler) {
-        return assembler.toResource(pazienti.findOne(id));
-    }
-
-    @RequestMapping(value = "/paziente/{id}", produces = { MediaType.TEXT_HTML_VALUE })
-    String getPazienteView(@PathVariable Integer id, ResourceAssembler<Paziente, Resource<Paziente>> assembler) {
-        getPaziente(id, assembler);
-
+    @RequestMapping(value = "/paziente/{id}")
+    String getPazienteView(@PathVariable Integer id, Model model) {
+        model.addAttribute("paziente", pazienti.findOne(id));
         return "paziente/detail";
     }
 }

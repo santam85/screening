@@ -46,7 +46,7 @@
 
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>Error:</h3>
                             <p>${ex}</p>
                         </div>
@@ -56,10 +56,10 @@
                             <input type="search" name="searchkey" id="searchkey" value="${param.searchkey}" placeholder="enter at least 2 characters..." pattern=".{2,}"/>
                         </form>
 
-                        <ul data-role="listview" data-inset="true" data-divider-theme="b" >
+                        <ul data-role="listview" data-inset="true" data-divider-theme="b">
                             <li data-role="list-divider">Risultati della ricerca: <span class="ui-li-count"> <fmt:formatNumber value="${rs!=null?rs.rowCount:0}" maxFractionDigits="0" minIntegerDigits="1" /> results</span></li>
                             <c:forEach var="row" items="${rs.rows}">
-                                <li data-theme="d">
+                                <li>
                                     <a href="patient-detail.jsp?id=${row.id}">
                                         <h3>${row.nome} ${row.cognome}</h3>
                                         <p class="folder-number"><strong>${row.cartella}</strong></p>

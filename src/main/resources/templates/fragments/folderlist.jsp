@@ -11,7 +11,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
-<ul data-role="listview" data-inset="true" >
+<ul data-role="listview" data-inset="true">
     <%
         Connection con = null;
         Statement stmt = null;
@@ -39,7 +39,7 @@
     <%}
         } catch (Exception ex) {
     %>
-        <li data-theme="e">
+        <li>
             <h1>Error:</h1>
             <p> <%=ex.getLocalizedMessage()%></p>
         </li>

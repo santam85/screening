@@ -1,46 +1,53 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org">
-    <head th:replace="fragments/head :: head">
-    </head>
-    <body>
-        <div id="index" data-role="page">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title th:text="|#{message.title} - ${title}|">Screening - Pazienti</title>
 
-            <div th:replace="fragments/header :: header">
-                <h1>Database Screening</h1>
-                <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
-            </div>
+    <!-- bower:css -->
+    <link rel="stylesheet" th:href="@{/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css}" href="/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
+    <!-- endbower -->
 
-            <div data-role="main" class="ui-content">
-                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
-                    <a th:href="@{/index(page=0)}" data-role="button" data-icon="arrow-l" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">First Page</a>
-                    <a th:href="${prevLink}" data-role="button" data-icon="back" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">Previous Page</a>
-                    <a th:href="${nextLink}" data-role="button" data-icon="forward" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled" >Next Page</a>
-                    <a th:href="@{/index(page=${pagedResources.metadata.totalPages-1})}" data-role="button" data-icon="arrow-r" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled">Last Page</a>
-                </div>
-                <ul data-role="listview" data-inset="true">
-                    <li th:each="entry : ${fooList}" data-theme="d" th:text="${entry}">
-                    </li>
-                </ul>
-                <ul data-role="listview" data-inset="true">
-                    <li data-role="list-divider">Lista pazienti, pagina <span th:text="${pagedResources.metadata.number+1}">1</span> di  <span th:text="${pagedResources.metadata.totalPages}">1</span><span class="ui-li-count" th:text="${pagedResources.metadata.totalElements} + ' ' + (${pagedResources.metadata.totalElements &gt; 1 } ? #{message.patients}:#{message.patient})"> 1 records </span></li>
-                    <li th:each="paziente : ${pagedResources.content.![content]}" data-theme="d">
-                        <a th:href="@{/paziente/{id}(id=${paziente.id})}">
-                            <h3 th:text="|${paziente.nome} ${paziente.cognome}|"></h3>
-                            <p class="folder-number"><strong th:text="${paziente.cartella}"></strong></p>
+    <script th:src="@{/vendor/requirejs/require.js}" src="/vendor/requirejs/require.js" data-main="/js/main"></script>
+</head>
+<body>
+<div id="index" data-role="page">
 
-                            <p class="ui-li-aside">
-                                <strong>BMI: </strong><span th:text="${paziente.bmi}" >1.0</span><br/>
-                                <strong>Nato il: </strong> <span th:text="${#calendars.format(paziente.datanascita,'dd/MM/yyyy')}">13 May 2011</span>
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <div data-role="header" data-position="fixed" data-id="header" data-tap-toggle="false">
+        <h1>Database Screening</h1>
+        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
+    </div>
 
-            <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
-                Logged user: <span sec:authentication="name">Bob</span> |
-                Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span> |
-            </div>
+    <div data-role="main" class="ui-content" layout:fragment="content">
+        <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+            <a th:href="@{/index(page=0)}" data-role="button" data-icon="arrow-l" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">First Page</a>
+            <a th:href="${prevLink}" data-role="button" data-icon="back" data-iconpos="left" th:class="${pagedResources.metadata.number &lt; 1}?ui-disabled">Previous Page</a>
+            <a th:href="${nextLink}" data-role="button" data-icon="forward" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled">Next Page</a>
+            <a th:href="@{/index(page=${pagedResources.metadata.totalPages-1})}" data-role="button" data-icon="arrow-r" data-iconpos="right" th:class="${pagedResources.metadata.number+1 &gt;= pagedResources.metadata.totalPages}?ui-disabled">Last Page</a>
         </div>
-    </body>
+        <ul data-role="listview" data-inset="true">
+            <li th:each="entry : ${fooList}" th:text="${entry}">
+            </li>
+        </ul>
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Lista pazienti, pagina <span th:text="${pagedResources.metadata.number+1}">1</span> di  <span th:text="${pagedResources.metadata.totalPages}">1</span><span class="ui-li-count" th:text="${pagedResources.metadata.totalElements} + ' ' + (${pagedResources.metadata.totalElements &gt; 1 } ? #{message.patients}:#{message.patient})"> 1 records </span></li>
+            <li th:each="paziente : ${pagedResources.content.![content]}">
+                <a th:href="@{/paziente/{id}(id=${paziente.id})}">
+                    <h3 th:text="|${paziente.nome} ${paziente.cognome}|"></h3>
+                    <p class="folder-number"><strong th:text="${paziente.cartella}"></strong></p>
+
+                    <p class="ui-li-aside">
+                        <strong>BMI: </strong><span th:text="${paziente.bmi}">1.0</span><br/>
+                        <strong>Nato il: </strong> <span th:text="${#calendars.format(paziente.datanascita,'dd/MM/yyyy')}">13 May 2011</span>
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+        Logged user: <span sec:authentication="name">Bob</span> |
+        Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span> |
+    </div>
+</div>
+</body>
 </html>

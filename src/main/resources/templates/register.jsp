@@ -56,19 +56,19 @@
             <div data-role="content">
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>Error:</h3>
                             <p>${ex}</p>
                         </div>
                     </c:when>
                     <c:when test="${empty ex and param.action.equalsIgnoreCase('register') and empty msg}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>User registered with success!</h3>
                             <p>The registered user needs to be enabled by an administrator. Register another user or <a href="login.jsp">log in</a>.</p>
                         </div>
                     </c:when>
                     <c:when test="${empty ex and param.action.equalsIgnoreCase('register') and not empty msg}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" data-icon="alert">
+                        <div data-role="collapsible" data-collapsed="false" data-icon="alert">
                             <h3>Error:</h3>
                             <p>${msg}</p>
                         </div>
@@ -95,10 +95,10 @@
 
                     <div class="ui-grid-a"  >
                         <div class="ui-block-a">
-                            <a data-role="button" href="login.jsp" data-icon="cancel" data-iconpos="left" data-theme="d">Cancel</a>
+                            <a data-role="button" href="login.jsp" data-icon="cancel" data-iconpos="left">Cancel</a>
                         </div>
                         <div class="ui-block-b">
-                            <button type="submit" name="action" value="register" data-theme="b">Register</button>
+                            <button type="submit" name="action" value="register">Register</button>
                         </div>
                     </div>
                 </form>

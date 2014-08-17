@@ -61,7 +61,7 @@
             <div data-role="content">
                 <c:choose>
                     <c:when test="${not empty ex}">
-                        <div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="d" >
+                        <div data-role="collapsible" data-collapsed="false">
                             <h3>Error:</h3>
                             <p>${ex.localizedMessage}</p>
                             <c:forEach var="stackTraceElem" items="${ex.stackTrace}">
@@ -78,15 +78,15 @@
                             <a href="index.jsp?page=<fmt:formatNumber value="${pageNumber-1}" maxFractionDigits="0" />" data-role="button" data-icon="arrow-r" data-iconpos="right" ${currentPage+1>pageNumber-1?'class="ui-disabled"':''}>Last Page</a>
                         </div>
 
-                        <ul data-role="listview" data-inset="true" style="clear: both;" >
+                        <ul data-role="listview" data-inset="true" style="clear: both;">
                             <li data-role="list-divider">Lista pazienti, pagina ${currentPage+1} di <fmt:formatNumber value="${pageNumber}" maxFractionDigits="0" /> <span class="ui-li-count"> <fmt:formatNumber value="${records}" maxFractionDigits="0" /> records </span></li>
                             <c:choose>
                                 <c:when test="${rst.rowCount eq 0}">
-                                    <li data-theme="d">Nessun paziente trovato.</li>
+                                    <li>Nessun paziente trovato.</li>
                                 </c:when>
                                 <c:otherwise>
                                     <c:forEach var="row" items="${rst.rows}">
-                                        <li data-theme="d">
+                                        <li>
                                             <a href="patient-detail.jsp?id=${row.id}">
                                                 <h3>${row.nome} ${row.cognome}</h3>
                                                 <p class="folder-number"><strong>${row.cartella}</strong></p>

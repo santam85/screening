@@ -45,7 +45,7 @@
                         <h5>La terapia verrà collegata alla <a href="patologiec-detail.jsp?id=${param.patologiec_id}">patologia</a> preselezionata.</h5>
                     </c:if>
                        
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="tipo" data-mini="true">
                             <option value="">Nessuno</option>
@@ -59,22 +59,22 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="descrizione">Descrizione:</label>
                         <textarea name="descrizione" id="descrizione" data-mini="true" required >${param.descrizione}</textarea>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="inizio">Data inizio terapia</label>
                         <input type="date" name="inizio" id="inizio" value="<fmt:formatDate value="${param.inizio}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="fine">Data fine terapia</label>
                         <input type="date" name="fine" id="fine" value="<fmt:formatDate value="${param.fine}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Patologie relative</legend>
                             <c:forEach var="row" items="${rspcon.rows}" varStatus="i">

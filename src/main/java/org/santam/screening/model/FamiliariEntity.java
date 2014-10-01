@@ -1,6 +1,11 @@
 package org.santam.screening.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.StringJoiner;
 
 @Entity
 @Table(name = "familiari")
@@ -10,7 +15,7 @@ public class FamiliariEntity {
     @Column(name = "id")
     private int id;
     @Column(name = "grado")
-    private int grado;
+    private Integer grado;
     @Column(name = "ccr")
     private Boolean ccr;
     @Column(name = "pa")
@@ -24,6 +29,11 @@ public class FamiliariEntity {
     @Column(name = "mutazioni")
     private String mutazioni;
 
+    @ManyToOne
+    @JoinColumn(name = "anagrafica_id", referencedColumnName = "id", nullable = false)
+    private Paziente anagraficaByAnagraficaId;
+
+
 
     public int getId() {
         return id;
@@ -33,11 +43,11 @@ public class FamiliariEntity {
         this.id = id;
     }
 
-    public int getGrado() {
+    public Integer getGrado() {
         return grado;
     }
 
-    public void setGrado(int grado) {
+    public void setGrado(Integer grado) {
         this.grado = grado;
     }
 
@@ -87,5 +97,22 @@ public class FamiliariEntity {
 
     public void setMutazioni(String mutazioni) {
         this.mutazioni = mutazioni;
+    }
+
+    public String getSummaryHeading(){
+        List<String> list = new LinkedList<>();
+        if(ccr) list.add("CCR");
+        if(pa) list.add("PA");
+        if(altric) list.add(descAltri);
+
+        return StringUtils.join(list,", ");
+    }
+
+    public Paziente getAnagraficaByAnagraficaId() {
+        return anagraficaByAnagraficaId;
+    }
+
+    public void setAnagraficaByAnagraficaId(Paziente anagraficaByAnagraficaId) {
+        this.anagraficaByAnagraficaId = anagraficaByAnagraficaId;
     }
 }

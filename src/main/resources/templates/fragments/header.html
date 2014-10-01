@@ -1,8 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org">
 <body>
-    <div th:fragment="header" data-role="header" data-position="fixed" data-id="header" data-tap-toggle="false">
+    <div data-th-fragment="header" data-role="header" data-position="fixed" data-id="header" data-tap-toggle="false">
         <h1>Database Screening</h1>
-        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
+        <form sec:authorize="isAuthenticated()" data-th-action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
     </div>
 </body>
 </html>

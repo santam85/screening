@@ -1,6 +1,6 @@
 package org.santam.screening.model;
 
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -29,11 +29,13 @@ public class Paziente {
     @Column(name = "iniziali")
     private String iniziali;
 
+
     @Column(name = "sesso")
     private String sesso;
 
     @Column(name = "datanascita")
     @Temporal(value = TemporalType.DATE)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date datanascita;
 
     @Column(name = "luogonascita")
@@ -57,7 +59,7 @@ public class Paziente {
     @Column(name = "alcohol")
     private Boolean alcohol;
 
-    @OneToMany(mappedBy = "anagraficaByAnagraficaId")
+    @OneToMany(mappedBy = "paziente")
     private Collection<Esame> esami;
 
     @OneToMany(mappedBy = "anagraficaByAnagraficaId")
@@ -65,6 +67,9 @@ public class Paziente {
 
     @OneToMany(mappedBy = "anagraficaByAnagraficaId")
     private Collection<PatologiecEntity> patologiec;
+
+    @OneToMany(mappedBy = "anagraficaByAnagraficaId")
+    private Collection<FamiliariEntity> familiari;
 
     public int getId() {
         return id;
@@ -204,5 +209,13 @@ public class Paziente {
 
     public void setPatologiec(Collection<PatologiecEntity> patologiec) {
         this.patologiec = patologiec;
+    }
+
+    public Collection<FamiliariEntity> getFamiliari() {
+        return familiari;
+    }
+
+    public void setFamiliari(Collection<FamiliariEntity> familiari) {
+        this.familiari = familiari;
     }
 }

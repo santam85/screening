@@ -21,7 +21,7 @@ public class Esame {
 
     @ManyToOne
     @JoinColumn(name = "anagrafica_id", referencedColumnName = "id", nullable = false)
-    private Paziente anagraficaByAnagraficaId;
+    private Paziente paziente;
 
     @ManyToOne
     @JoinColumn(name = "completamento", referencedColumnName = "id")
@@ -52,11 +52,11 @@ public class Esame {
         this.tipo = tipo;
     }
 
-    public Paziente getAnagraficaByAnagraficaId() {
-        return anagraficaByAnagraficaId;
+    public Paziente getPaziente() {
+        return paziente;
     }
-    public void setAnagraficaByAnagraficaId(Paziente anagraficaByAnagraficaId) {
-        this.anagraficaByAnagraficaId = anagraficaByAnagraficaId;
+    public void setPaziente(Paziente paziente) {
+        this.paziente = paziente;
     }
 
     public Esame getEsameCompletato() {

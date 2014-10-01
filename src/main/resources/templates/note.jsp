@@ -59,14 +59,14 @@
                     </c:when>
                     <c:otherwise>
                         <div data-role="popup" id="note-add-popup" data-overlay-theme="b" data-position-to="li">
-                            <div style="padding:10px 20px; width: 500px;">
+                            <div style="padding:10px 20px; widdata-th- 500px;">
                                 <form method="post" action="note.jsp">
-                                    <div data-role="fieldcontain">
+                                    <div class="ui-field-contain">
                                         <label for="subject">Titolo:</label>
                                         <input type="text" name="subject" id="subject" value="${param.subject}" data-mini="true" />
                                     </div>
 
-                                    <div data-role="fieldcontain">
+                                    <div class="ui-field-contain">
                                         <label for="text">Nota:</label>
                                         <textarea name="text" id="text" data-mini="true">${param.tnm}</textarea>
                                     </div>

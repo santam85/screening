@@ -1,0 +1,403 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-image"
+			],
+			[
+				"l",
+				"link	Tag"
+			],
+			[
+				"url",
+				"urldecode"
+			],
+			[
+				"urlo",
+				"urlobj"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"po",
+				"postbody"
+			],
+			[
+				"ver",
+				"verboser"
+			],
+			[
+				"pro",
+				"proxyConfig"
+			],
+			[
+				"pat",
+				"path"
+			],
+			[
+				"pr",
+				"proxyConfig"
+			],
+			[
+				"ne",
+				"nextInt"
+			],
+			[
+				"turn",
+				"turn-1"
+			],
+			[
+				"your",
+				"yourhands"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/marco/workspace/screening/src/main/resources/templates/paziente/list.html",
+		"/Users/marco/workspace/screening/src/main/resources/templates/paziente/edit.html",
+		"/Users/marco/workspace/screening/src/main/resources/templates/index.html",
+		"/Users/marco/Desktop/.inputrc",
+		"/Users/marco/workspace/HiscoxUK/trunk/forms/forms-home/target/test-classes/logback.xml",
+		"/Library/LaunchDaemons/java.props.plist",
+		"/Users/marco/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-add-csc.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-add-ctv.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-add-sof.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-detail-csc-addpolipo.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-detail-csc-editpolipo.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-edit-csc.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-edit-ctv.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/exam-edit-sof.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/familiare-add.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/familiare-edit.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/note.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/patologiec-add.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/patologiec-edit.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/settings.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/terapie-add.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/terapie-edit.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/users.jsp",
+		"/Users/marco/workspace/screening/src/main/resources/templates/paziente/add.html",
+		"/Users/marco/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/marco/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/marco/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/marco/Desktop/Dump20140815-1.sql",
+		"/Users/marco/Downloads/grails-petclinic-master/grails-app/views/clinic/index.gsp",
+		"/Users/marco/Desktop/log.txt",
+		"/Users/marco/Desktop/2014-08-14 11:42:11.261 Forms Runtime [qtp21067985",
+		"/Users/marco/.bash_profile",
+		"/Users/marco/workspace/HiscoxUK/trunk/portal/target/test-classes/configuration/backbase-home/step 1D flow",
+		"/Users/marco/Desktop/Application.java",
+		"/Users/marco/Desktop/stories.txt",
+		"/Users/marco/Desktop/request.xml",
+		"/Users/marco/Desktop/environment.plist",
+		"/Users/marco/Dropbox/Work/gara/Screening/web/WEB-INF/tlds/screening.tld",
+		"/Users/marco/Dropbox/Work/gara/Screening/web/WEB-INF/tlds/jqm.tld",
+		"/Users/marco/workspace/HiscoxUK/trunk/portal/pom.xml",
+		"/Users/marco/Downloads/watercooler/app/styles/main.css",
+		"/Users/marco/Downloads/watercooler/app/scripts/app.js",
+		"/Users/marco/Downloads/watercooler/app/scripts/controllers/main.js",
+		"/Users/marco/Downloads/watercooler/app/scripts/directives/general.js",
+		"/Users/marco/Desktop/HISCIMP-2282_-_UX_-_User_research_-_Step_1_-_As_a_user,_I_want_to_see_error_messages_more_.patch",
+		"/Library/WebServer/Documents/datacash/lib.css",
+		"/Library/WebServer/Documents/datacash/CapturePayment_page_Test.html",
+		"/Library/WebServer/Documents/datacash/glyphicons-ie8.css",
+		"/Library/WebServer/Documents/datacash/index.html",
+		"/Users/marco/workspace/datasciencecoursera/HelloWorld.md",
+		"/Users/marco/Desktop/Archive/xslt/generic/genericerror.xsl",
+		"/Users/marco/workspace/HiscoxUK/.idea/workspace.xml",
+		"/Users/marco/workspace/HiscoxUK/.idea/HiscoxUK.iml",
+		"/Users/marco/Desktop/untitled",
+		"/Users/marco/Downloads/2048-AI-master 2/js/game_manager.js",
+		"/Users/marco/Downloads/2048-AI-master 2/js/keyboard_input_manager.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/animframe_polyfill.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/bind_polyfill.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/classlist_polyfill.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/local_storage_manager.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/tile.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/batman-storage-manager.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/hammer.min.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/ai.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/html_actuator.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/application.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/game_manager.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/game-2048.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/grid.js",
+		"/Users/marco/workspace/batman/batman/portalserver/src/main/webapp/static/batman/widgets/game-2048/js/keyboard_input_manager.js",
+		"/Users/marco/Downloads/2048-AI-master/js/tile.js",
+		"/Users/marco/Downloads/2048-AI-master/js/keyboard_input_manager.js",
+		"/Users/marco/Downloads/2048-AI-master/js/html_actuator.js",
+		"/Users/marco/Downloads/2048-AI-master/js/hammer.min.js",
+		"/Users/marco/Downloads/2048-AI-master/js/grid.js",
+		"/Users/marco/Downloads/2048-AI-master/js/game_manager.js",
+		"/Users/marco/Downloads/2048-AI-master/js/application.js",
+		"/Users/marco/Downloads/2048-AI-master/js/ai.js",
+		"/Users/marco/Downloads/2048-AI-master/js/animframe_polyfill.js",
+		"/Users/marco/Downloads/2048-AI-master/index.html",
+		"/Users/marco/Downloads/jquery-1.11.1.min.js",
+		"/Users/marco/Desktop/test.html",
+		"/Users/marco/.m2/settings.xml",
+		"/Users/marco/workspace/HiscoxUK/trunk/configuration/src/main/resources/forms-home/plugins/co/uk/hiscox/forms/plugin/clause/Clauses.txt",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/FFFB8909-4ECB-438A-A29E-2554430C9B95/backbase/index.html",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/FFFB8909-4ECB-438A-A29E-2554430C9B95/backbase/js/application.js",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/FFFB8909-4ECB-438A-A29E-2554430C9B95/backbase/css/style.css",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/FFFB8909-4ECB-438A-A29E-2554430C9B95/backbase/js/main.js",
+		"/Users/marco/Dropbox/Work/backbase/Test/index.html",
+		"/Users/marco/Desktop/generic-mobile.html",
+		"/Users/marco/Downloads/MobileTemplates/generic/generic-mobile.html",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/062D7868-74B5-4BBB-9164-E3363674DD77/backbase-frontend-exercise/public/js/app.js",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/062D7868-74B5-4BBB-9164-E3363674DD77/backbase-frontend-exercise/public/css/main.css",
+		"/Users/marco/Desktop/backbase/app/index.html",
+		"/Users/marco/Desktop/backbase/app/script/app.js",
+		"/Users/marco/Desktop/interfaces.xsd",
+		"/Users/marco/Desktop/interfaces old.xsd",
+		"/Users/marco/Desktop/screening-20140707.sql",
+		"/Users/marco/Downloads/bootstrap-3.2.0/less/bootstrap.less",
+		"/Users/marco/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/2E0C3049-52D9-4555-9E22-BD21C6C069E9/IssuePolicy_Request.xml",
+		"/Users/marco/Desktop/issuepolicy.xml",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/app/styles/main.scss",
+		"/Users/marco/Desktop/datacash-styling-25-06-02014/CapturePayment_page.html",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/dist/styles/main.3379595c.css",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/yeoman/yeoman/app/styles/1c5136f5.main.css",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/app/scripts/app.coffee",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/app/scripts/controllers/main.coffee",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/app/scripts/factory/factory.coffee",
+		"/Users/marco/Downloads/mkrupa-yahoonews-9a9245422644/Gruntfile.js",
+		"/Users/marco/Downloads/datacash-styling-0227052014/CapturePayment_page.html",
+		"/Users/marco/workspace/HiscoxUK/trunk/configuration/target/configuration/forms-home/backbase.properties",
+		"/Users/marco/Desktop/copyjenkinsartifacts.groovy",
+		"/Users/marco/Desktop/GroovyWrapper.groovy",
+		"/Users/marco/Desktop/DataCash-1788-16-05/CapturePayment_page.html",
+		"/Users/marco/Downloads/DataCash-1788-16-05/CapturePayment_page.html",
+		"/Users/marco/Desktop/DataCash-1788-13-05/CapturePayment_page.html",
+		"/Users/marco/Desktop/fonts/glyphicons-halflings-regular.ttf",
+		"/Users/marco/Desktop/fonts/glyphicons-halflings-regular1.ttf",
+		"/Users/marco/Downloads/rar/default.sfx",
+		"/Users/marco/Dropbox/Work/Gara/Screening/nbproject/project.properties",
+		"/Users/marco/Dropbox/Work/Gara/Screening/nbproject/genfiles.properties",
+		"/Applications/NetBeans/apache-tomcat-8.0.5/conf/tomcat-users.xml",
+		"/Users/marco/Dropbox/Work/OpenCart Unicredit/1.4/catalog/controller/payment/unicredit.php",
+		"/Users/marco/Dropbox/Work/OpenCart Unicredit/1.5/catalog/controller/payment/unicredit.php",
+		"/Library/WebServer/Documents/cpe/testPagoOnline/php/ISPPayAccount.php",
+		"/Users/marco/Desktop/cpe/testPagoOnline/php/ISPPayAccount.php",
+		"/Library/WebServer/Documents/client_pagamenti_elettronici/testPagoOnline/ordine.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"[^<]span ",
+			"data-role=\"fieldcontain\"",
+			"super+backspace",
+			"super+bac",
+			"\n></",
+			"timeout",
+			"jetty",
+			"etty-maven-plugin",
+			"jetty",
+			"maven",
+			"result",
+			"run",
+			"EMIT",
+			"/*!",
+			"emit",
+			"run-button",
+			"&amp",
+			"1000501",
+			"excise\n1000501",
+			"excise",
+			",",
+			"name",
+			"<br />",
+			"br />",
+			"br/>",
+			"environ",
+			"portalserver",
+			"[0-9]{10}",
+			"[0-9]{16}",
+			"collection",
+			"4200203089580871",
+			"4800203089580887",
+			"payment",
+			"reference",
+			"paymen",
+			"buildingWork",
+			"hasBuildingWorkVORef",
+			"work",
+			"ns2:",
+			"xdebug",
+			"zend_",
+			".php",
+			"php5",
+			"ext",
+			"extensions",
+			"mcrypt",
+			"previewMode",
+			"localhost",
+			"uri",
+			"try",
+			"hiscoxuk03",
+			"hiscoxuk02",
+			"soapui-maven-plugin",
+			"soapui-maven",
+			"sopui-maven",
+			"smartbear",
+			"soapui-maven-plugin",
+			"soapui.version",
+			"soapui-maven-plugin",
+			"idit",
+			"pluginRepositor",
+			";\n",
+			"response",
+			"slider"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"class=\"ui-field-contain\"",
+			"\\n",
+			"portal",
+			"",
+			"pathname",
+			"res"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true
+}

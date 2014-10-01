@@ -50,12 +50,12 @@
 
                         <input type="hidden" name="tipo" value="csc"/>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="dataesame">Data esame</label>
                             <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${param.dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="completamento">Completamento diagnostico</label>
                             <select id="completamento" name="completamento" data-mini="true">
                                 <option value="">Esame indipendente</option>
@@ -65,12 +65,12 @@
                             </select>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="pulizia">Pulizia</label>
                             <input type="text" name="pulizia" id="pulizia" value="${param.pulizia}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Esame portato a termine</legend>
 
@@ -80,25 +80,25 @@
                             </fieldset>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="tipopreparazione">Tipo preparazione</label>
                             <input type="text" name="tipopreparazione" id="tipopreparazione" value="${param.tipopreparazione}" data-mini="true" />
                         </div>
 
                         <h3>Esami di laboratorio</h3>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="glicemia">Glicemia</label>
                             <input type="text" name="glicemia" id="glicemia" value="${param.glicemia}" data-mini="true" />
                         </div>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="trigliceridi">Trigliceridi</label>
                             <input type="text" name="trigliceridi" id="trigliceridi" value="${param.trigliceridi}" data-mini="true" />
                         </div>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="colesterolo">Colesterolo</label>
                             <input type="text" name="colesterolo" id="colesterolo" value="${param.colesterolo}" data-mini="true" />
                         </div>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="inr">INR</label>
                             <input type="text" name="inr" id="inr" value="${param.inr}" data-mini="true" />
                         </div>
@@ -107,7 +107,7 @@
                         <p>Per inserire nuovi polipi relativi all'esame corrente, consultare la pagina di dettaglio dopo il salvataggio.</p>
 
                         <h3>Cancro</h3>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Cancro</legend>
                                 <label for="cancro">Si/No</label>
@@ -115,7 +115,7 @@
                             </fieldset>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Sede cancro</legend>
                                 <label for="sedecancro_cieco">Cieco</label>
@@ -137,22 +137,22 @@
                             </fieldset>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="stadio">Stadio</label>
                             <input type="text" name="stadio" id="stadio" value="${param.stadio}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="tnm">TNM</label>
                             <input type="text" name="tnm" id="tnm" value="${param.tnm}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="nlinfonodipositivi">Numero Linfonodi positivi</label>
                             <input type="text" name="nlinfonodipositivi" id="nlinfonodipositivi" value="${param.nlinfonodipositivi}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="intervento">Intervento Chirurgico</label>
                             <select name="intervento" id="intervento" data-mini="true">
                                 <option value="">Nessuno</option>
@@ -165,11 +165,11 @@
                             </select>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="ihc">IHC</label>
                             <input type="text" name="ihc" id="ihc" value="${param.ihc}" data-mini="true" />
                         </div>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="mutazioni">Mutazioni</label>
                             <select name="mutazioni" id="mutazioni" data-mini="true">
                                 <option value="">Nessuno</option>
@@ -181,12 +181,12 @@
                             </select>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="chemio">Chemio (Tipo)</label>
                             <input type="text" name="chemio" id="chemio" value="${param.chemio}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Radio</legend>
                                 <label for="radio">Si/No</label>
@@ -195,7 +195,7 @@
                         </div>
                             
                         <h3>Altri carcinomi</h3>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="othercslider">Altri:</label>
                             <select id="othercslider" class="othercslider" data-role="slider" data-mini="true">
                                 <option value="No">No</option>
@@ -203,7 +203,7 @@
                             </select>
                         </div>
                         
-                        <div data-role="fieldcontain" class="othercfieldcontain">
+                        <div class="ui-field-contain" class="othercfieldcontain">
                             <label for="altric">Descrizione:</label>
                             <textarea name="altric" id="altric" data-mini="true"></textarea>
                         </div>

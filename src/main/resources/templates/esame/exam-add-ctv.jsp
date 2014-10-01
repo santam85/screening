@@ -49,12 +49,12 @@
 
                     <input type="hidden" name="tipo" value="ctv"/>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="dataesame">Data esame</label>
                         <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="completamento">Completamento diagnostico</label>
                         <select id="completamento" name="completamento" data-mini="true">
                             <option value="">Esame indipendente</option>
@@ -64,7 +64,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="pulizia">Pulizia</label>
                         <select name="pulizia" id="pulizia" data-mini="true">
                             <option value="Nessun residuo" ${rs.rows[0].pulizia eq 'Nessun residuo'?'selected="selected"':''} >Nessun residuo</option>
@@ -73,7 +73,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Lesioni</legend>
                             <label for="lesioni">Si/No</label>
@@ -81,7 +81,7 @@
                         </fieldset>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="tipolesioni">Tipo lesioni</label>
                         <select name="tipolesioni" id="tipolesioni" data-mini="true">
                             <option value="">Nessuno</option>
@@ -91,7 +91,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Sede cancro</legend>
                             <label for="sedecancro_cieco">Cieco</label>
@@ -111,7 +111,7 @@
                         </fieldset>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="dimensioni">Dimensioni (mm)</label>
                         <input type="text" name="dimensioni" id="dimensioni" value="<fmt:formatNumber value="${rs.rows[0].dimensioni}" maxFractionDigits="0" />" data-mini="true" />
                     </div>                       

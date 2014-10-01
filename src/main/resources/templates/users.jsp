@@ -144,32 +144,32 @@
                     <h3>Add new user</h3>
                     <p>
                     <form action="users.jsp?_=${now.time}" method="post">
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="username">Nome</label>
                             <input id="nome" name="nome" type="text" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="password">Cognome</label>
                             <input id="cognome" name="cognome" type="text" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="username">Username</label>
                             <input id="username" name="username" type="text" placeholder="email@domain.com"/>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="password">Password</label>
                             <input id="password" name="password" type="password" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="repeatpassword">Reenter Password</label>
                             <input id="repeatpassword" name="repeatpassword" type="password" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="role">Role</label>
                             <select id="role" name="role">
                                 <option value="admin">Admin</option>
@@ -178,7 +178,7 @@
                             </select>
                         </div>
 
-                        <div data-role="fieldcontain" class="longflipswitch">
+                        <div class="ui-field-contain" class="longflipswitch">
                             <label for="status">Status</label>
                             <select id="status" name="status" data-role="slider">
                                 <option value="0">Disabled</option>

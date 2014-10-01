@@ -1,0 +1,9 @@
+.ui-li-divider-aside {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.ui-li-divider-aside .ui-btn{
+    margin: 0;
+}

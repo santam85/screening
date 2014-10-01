@@ -34,7 +34,7 @@
 
                     <h3>Anagrafica</h3>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="screeningslider">Screening:</label>
                         <select id="screeningslider" class="screeningslider" data-role="slider" data-mini="true">
                             <option value="No">No</option>
@@ -42,27 +42,27 @@
                         </select>
                     </div>
                         
-                    <div data-role="fieldcontain" class="cartellafieldcontain">
+                    <div class="ui-field-contain" class="cartellafieldcontain">
                         <label for="cartella">Numero Cartella:</label>
                         <input type="text" name="cartella" id="cartella" value="${param.cartella}" data-mini="true" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="nome">Nome:</label>
                         <input type="text" name="nome" id="nome" value="${param.nome}" data-mini="true" required/>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="cognome">Cognome:</label>
                         <input type="text" name="cognome" id="cognome" value="${param.cognome}" data-mini="true" required/>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="iniziali">Iniziali:</label>
                         <input type="text" name="iniziali" id="iniziali" value="${param.iniziali}" data-mini="true" required/>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="sesso">Sesso:</label>
                         <select name="sesso" id="sesso" data-role="slider" data-mini="true">
                             <option value="M" ${param.sesso eq 'M'?'selected="true"':''}>M</option>
@@ -70,17 +70,17 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="datanascita">Data di nascita:</label>
                         <input type="date" name="datanascita" id="datanascita" value="${param.datanascita}" data-mini="true" data-role="datebox" required/>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="luogonascita">Luogo di nascita:</label>
                         <input type="text" name="luogonascita" id="luogonascita" value="${param.luogonascita}" data-mini="true" required/>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="nazionenascita">Nazionalit&agrave;:</label>
                         <input type="text" name="nazionenascita" id="nazionenascita" value="${param.nazionenascita}" data-mini="true" required/>
                     </div>
@@ -89,12 +89,12 @@
                         <div data-role="collapsible">
                             <h3>Antropom</h3>
                             <p>
-                            <div data-role="fieldcontain">
+                            <div class="ui-field-contain">
                                 <label for="peso">Peso</label>
                                 <input type="text" name="peso" id="peso" value="${param.peso}" data-mini="true" />
                             </div>
 
-                            <div data-role="fieldcontain">
+                            <div class="ui-field-contain">
                                 <label for="altezza">Altezza (m)</label>
                                 <input type="text" name="altezza" id="altezza" value="${param.altezza}" data-mini="true" />
                             </div>
@@ -104,7 +104,7 @@
                         <div data-role="collapsible">
                             <h3>Stile di vita</h3>
                             <p>
-                            <div data-role="fieldcontain">
+                            <div class="ui-field-contain">
                                 <fieldset data-role="controlgroup" data-mini="true">
                                     <legend>Fumo</legend>
 
@@ -114,7 +114,7 @@
                                 </fieldset>
                             </div>
 
-                            <div data-role="fieldcontain">
+                            <div class="ui-field-contain">
                                 <fieldset data-role="controlgroup" data-mini="true">
                                     <legend>Alcool</legend>
 

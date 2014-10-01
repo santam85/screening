@@ -1,10 +1,20 @@
 package org.santam.screening.security;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.dao.ReflectionSaltSource;
+import org.springframework.security.authentication.dao.SaltSource;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CustomPasswordEncoder extends Md5PasswordEncoder {
+
+    @Bean
+    SaltSource getSaltSource(){
+        ReflectionSaltSource rss = new ReflectionSaltSource();
+        rss.setUserPropertyToUse("salt");
+        return rss;
+    }
 
     @Override
     public boolean isPasswordValid(String encPass, String rawPass, Object salt) {

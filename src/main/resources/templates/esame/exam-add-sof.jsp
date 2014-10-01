@@ -50,12 +50,12 @@
 
                     <input type="hidden" name="tipo" value="sof"/>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="dataesame">Data esame</label>
                         <input type="date" name="dataesame" id="dataesame" value="<fmt:formatDate value="${rs.rows[0].dataesame}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="completamento">Completamento diagnostico</label>
                         <select id="completamento" name="completamento" data-mini="true">
                             <option value="">Esame indipendente</option>
@@ -65,7 +65,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <fieldset data-role="controlgroup" data-mini="true">
                             <legend>Positivo</legend>
 

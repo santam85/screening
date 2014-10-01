@@ -48,7 +48,7 @@
 
                     <h4><strong>Paziente:</strong> <a href="patient-detail.jsp?id=${param.anagrafica_id}">${rsanag.rows[0].nome} ${rsanag.rows[0].cognome}</a></h4>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="tipo" data-mini="true">
                             <option value="">Nessuno</option>
@@ -61,12 +61,12 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="descrizione">Descrizione:</label>
                         <textarea name="descrizione" id="descrizione" data-mini="true" required >${rs.rows[0].descrizione}</textarea>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="sindrome">Sindrome:</label>
                         <select name="sindrome" id="sindrome" data-mini="true">
                             <option value="">Nessuno</option>
@@ -79,13 +79,13 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="mutazioni">Mutazioni:</label>
                         <input type="text" name="mutazioni" id="mutazioni" value="${rs.rows[0].mutazioni}" data-mini="true" />
                     </div>
 
                     <c:if test="${rspter.rowCount>0}">
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Terapie relative</legend>
                                 <c:forEach var="row" items="${rspter.rows}" varStatus="i">

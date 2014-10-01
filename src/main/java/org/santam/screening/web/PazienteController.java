@@ -12,15 +12,18 @@ import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
+import javax.validation.Valid;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
 @Controller
+@RequestMapping(value = "/paziente")
+@SessionAttributes(types = Paziente.class)
 public class PazienteController {
 
     @Autowired
@@ -34,17 +37,15 @@ public class PazienteController {
         return WordUtils.capitalizeFully(messages.getMessage("message.patients",null,locale));
     }
 
-    @ModelAttribute
-    private List<String> populateFoo(){
+    @ModelAttribute("allGenders")
+    private List<String> populateGender(){
         LinkedList<String> strings = new LinkedList<>();
-        strings.add("Oin");
-        strings.add("Gloin");
-        strings.add("Dori");
-        strings.add("Nori");
+        strings.add("M");
+        strings.add("F");
         return strings;
     }
 
-    @RequestMapping(value = "/paziente")
+    @RequestMapping(value = "")
     public String getAllPatientsView(@PageableDefault(size = 10) Pageable p, PagedResourcesAssembler<Paziente> assembler, Model model){
         PagedResources<Resource<Paziente>> pr = assembler.toResource(pazienti.findAll(p));
         model.addAttribute(pr);
@@ -55,9 +56,32 @@ public class PazienteController {
         return "paziente/list";
     }
 
-    @RequestMapping(value = "/paziente/{id}")
+    @RequestMapping(value = "/{id}")
     String getPazienteView(@PathVariable Integer id, Model model) {
         model.addAttribute("paziente", pazienti.findOne(id));
         return "paziente/detail";
+    }
+
+    @RequestMapping(value = "/{id}/edit")
+    String showPazienteForm(@PathVariable Integer id, Model model) {
+        model.addAttribute("paziente", pazienti.findOne(id));
+        return "paziente/edit";
+    }
+
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.POST)
+    String editPaziente(@Valid Paziente paziente, BindingResult bindingResult, SessionStatus status) {
+        if(bindingResult.hasErrors()){
+            return "paziente/edit";
+        }
+
+        pazienti.save(paziente);
+        status.setComplete();
+
+        return "redirect:/paziente/{id}";
+    }
+
+    @RequestMapping(value = "/{id}/esami")
+    String showPazienteEsami(@PathVariable Integer id) {
+        return "redirect:/esame/search/searchByPaziente?paziente={id}";
     }
 }

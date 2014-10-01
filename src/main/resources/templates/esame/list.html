@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title data-th-text="|#{message.title} - ${title}|">Screening - Pazienti</title>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" data-th-href="@{/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css}" href="/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" data-th-href="@{/css/main.css}" href="/css/main.css" />
+
+        <script data-th-src="@{/vendor/requirejs/require.js}" data-th-attr="data-main=@{/js/main}" src="/vendor/requirejs/require.js" data-main="/js/main"></script>
+    </head>
+    <body>
+        <div id="index" data-role="page">
+
+            <div data-role="header" data-position="fixed" data-id="header" data-tap-toggle="false">
+                <h1>Database Screening</h1>
+                <form sec:authorize="isAuthenticated()" data-th-action="@{/logout}" method="post">
+                    <button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button>
+                </form>
+            </div>
+
+            <div data-role="main" class="ui-content" layout:fragment="content">
+                <div data-role="popup" id="type-popup">
+                    <p>
+                        Selezionare il tipo di esame:
+                        <a href="exam-add-sof.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">SOF</a>
+                        <a href="exam-add-ctv.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">Colon TC Virtuale</a>
+                        <a href="exam-add-csc.jsp?anagrafica_id=${param.anagrafica_id}" data-role="button" data-icon="plus">Colonscopia</a>
+                    </p>
+                </div>
+
+                <h4 data-th-if="${paziente}"><strong>Paziente:</strong> <a data-th-text="|${paziente.nome} ${paziente.cognome}|" data-th-href="@{/paziente/{id}(id=${paziente.id})}" href="detail.html"></a></h4>
+
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li data-role="list-divider">
+                        <h3>Lista esami</h3>
+                        <p class="ui-li-divider-aside">
+                            <a href="#type-popup" data-rel="popup" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo esame</a>
+                        </p>
+                    </li>
+                    <li data-th-if="${#lists.isEmpty(pagedResources.content)}">Nessun esame trovato.</li>
+                    <li data-th-each="esame : ${pagedResources.content.![content]}">
+                        <a href="exam-detail-${row.tipo}.jsp?id=${row.id}">
+                            <h3 data-th-text="${esame.tipo}">Tipo</h3>
+                            <p class="ui-li-aside"><strong>Data: </strong><span data-th-text="${#calendars.format(esame.dataesame,'dd/MM/yyyy')}"></span></p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="#type-popup" data-rel="popup" data-role="button" data-icon="plus">Inserimento nuovo esame</a>
+            </div>
+
+            <div data-th-fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+                Logged user: <span sec:authentication="name">Bob</span> | <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+            </div>
+        </div>
+    </body>
+</html>

@@ -42,7 +42,7 @@
                         <h5>La patologia verrà collegata a una <a href="terapie-detail.jsp?id=${param.terapie_id}">terapia</a> esistente.</h5>
                     </c:if>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="tipo" data-mini="true">
                             <option value="">Nessuno</option>
@@ -55,12 +55,12 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="descrizione">Descrizione:</label>
                         <textarea name="descrizione" id="descrizione" data-mini="true" required >${param.descrizione}</textarea>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="sindrome">Sindrome:</label>
                         <select name="sindrome" id="sindrome" data-mini="true">
                             <option value="">Nessuno</option>
@@ -73,7 +73,7 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="mutazioni">Mutazioni:</label>
                         <input type="text" name="mutazioni" id="mutazioni" value="${param.mutazioni}" data-mini="true" />
                     </div>

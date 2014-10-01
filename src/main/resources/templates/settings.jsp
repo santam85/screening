@@ -41,27 +41,27 @@
 
                         <h2>Edit patient information</h2>
                         
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="cartella">Numero Cartella:</label>
                             <input type="text" name="cartella" id="cartella" value="${rs.rows[0].cartella}" data-mini="true" disabled />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="nome">Nome:</label>
                             <input type="text" name="nome" id="nome" value="${rs.rows[0].nome}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="cognome">Cognome:</label>
                             <input type="text" name="cognome" id="cognome" value="${rs.rows[0].cognome}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="cartella">Iniziali:</label>
                             <input type="text" name="iniziali" id="iniziali" value="${rs.rows[0].iniziali}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="sesso">Sesso:</label>
                             <select name="sesso" id="sesso" data-role="slider" data-mini="true">
                                 <option value="M" <c:if test="${rs.rows[0].sesso eq 'M'}">selected="true"</c:if>>M</option>
@@ -69,42 +69,42 @@
                                 </select>
                             </div>
 
-                            <div data-role="fieldcontain">
+                            <div class="ui-field-contain">
                                 <label for="datanascita">Data di nascita:</label>
                                 <input type="date" name="datanascita" id="datanascita" value="<fmt:formatDate value="${rs.rows[0].datanascita}" pattern="dd/MM/yyyy"/>" data-mini="true" data-role="datebox" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="luogonascita">Luogo di nascita:</label>
                             <input type="text" name="luogonascita" id="luogonascita" value="${rs.rows[0].luogonascita}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="nazionenascita">Nazionalit&agrave;:</label>
                             <input type="text" name="nazionenascita" id="nazionenascita" value="${rs.rows[0].nazionenascita}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="peso">Peso</label>
                             <input type="number" name="peso" id="peso" value="${rs.rows[0].peso}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="altezzam">Altezza (m)</label>
                             <input type="number" name="altezzam" id="altezzam" value="${rs.rows[0].altezzam}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="altezzam2">Altezza (m2)</label>
                             <input type="number" name="altezzam2" id="altezzam2" value="${rs.rows[0].altezzam2}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="bmi">BMI</label>
                             <input type="number" name="bmi" id="bmi" value="${rs.rows[0].bmi}" data-mini="true" />
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Familiarit&agrave; CCR</legend>
 
@@ -114,7 +114,7 @@
                             </fieldset>
                         </div>
 
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <label for="nccr">Numero CCR</label>
                             <input type="number" name="nccr" id="nccr" value="${rs.rows[0].nccr}" data-mini="true" />
                         </div>

@@ -12,5 +12,8 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "pazienti", path = "paziente")
 public interface PazienteRepository extends PagingAndSortingRepository<Paziente, Integer> {
+    List<Paziente> findByNome(@Param("nome") String name);
     List<Paziente> findByCognome(@Param("cognome") String name);
+
+    List<Paziente> findByNomeLike(@Param("text") String text);
 }

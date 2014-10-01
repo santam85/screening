@@ -6,6 +6,7 @@
     <artifactId>screening</artifactId>
     <name>Screening</name>
     <version>0.1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <description>Spring Boot makeover of screening app</description>
     <url>http://projects.spring.io/spring-boot/</url>
@@ -126,6 +127,7 @@
                 <version>9.2.2.v20140723</version>
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <webAppSourceDirectory>${basedir}/src/main/resources/static</webAppSourceDirectory>
                     <httpConnector>
                         <port>8080</port>
                     </httpConnector>

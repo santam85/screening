@@ -46,7 +46,7 @@
 
                     <h4><strong>Paziente:</strong> <a href="patient-detail.jsp?id=${rsanag.rows[0].id}">${rsanag.rows[0].nome} ${rsanag.rows[0].cognome}</a></h4>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="tipo" data-mini="true">
                             <option value="">Nessuno</option>
@@ -60,23 +60,23 @@
                         </select>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="descrizione">Descrizione:</label>
                         <textarea name="descrizione" id="descrizione" data-mini="true" required >${rs.rows[0].descrizione}</textarea>
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="inizio">Data inizio terapia</label>
                         <input type="date" name="inizio" id="inizio" value="<fmt:formatDate value="${rs.rows[0].inizio}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
-                    <div data-role="fieldcontain">
+                    <div class="ui-field-contain">
                         <label for="fine">Data fine terapia</label>
                         <input type="date" name="fine" id="fine" value="<fmt:formatDate value="${rs.rows[0].fine}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" />
                     </div>
 
                     <c:if test="${rspcon.rowCount>0}">
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain">
                             <fieldset data-role="controlgroup" data-mini="true">
                                 <legend>Patologie relative</legend>
                                 <c:forEach var="row" items="${rspcon.rows}" varStatus="i">

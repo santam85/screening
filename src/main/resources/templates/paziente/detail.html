@@ -1,219 +1,213 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="index">
     <head>
+        <title data-th-text="|#{message.title} - ${title}|">Screening - Pazienti</title>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" data-th-href="@{/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css}" href="../../static/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
+        <!-- endbower -->
+
+        <script data-th-src="@{/vendor/requirejs/require.js}" src="../../static/vendor/requirejs/require.js" data-main="../../static/js/main"></script>
     </head>
     <body>
         <div id="index" data-role="page">
 
-        <div>
-            <h1>Database Screening</h1>
-            <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
-        </div>
-
-        <div data-role="content" layout:fragment="content">
-
-            <div data-role="popup" id="type-popup">
-                <p>
-                    Selezionare il tipo di esame:
-                    <a href="../exam/sof.add.html?anagrafica_id=${patientid}" data-role="button" data-icon="plus">SOF</a>
-                    <a href="../exam/ctv-add.html?anagrafica_id=${patientid}" data-role="button" data-icon="plus">Colon TC Virtuale</a>
-                    <a href="../exam/csc-add.html?anagrafica_id=${patientid}" data-role="button" data-icon="plus">Colonscopia</a>
-                </p>
+            <div>
+                <h1>Database Screening</h1>
+                <form sec:authorize="isAuthenticated()" data-th-action="@{/logout}" method="post"><button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button></form>
             </div>
 
-            <ul data-role="listview" data-inset="true">
-                <li>
-                    <h3>Numero cartella</h3>
-                    span class="ui-li-aside" th:text="${paziente.cartella}"></span>
-                </li>
-                <li>
-                    <h3>Nome</h3>
-                    span class="ui-li-aside" th:text="${paziente.nome}"></span>
-                </li>
-                <li>
-                    <h3>Cognome</h3>
-                    span class="ui-li-aside" th:text="${paziente.cognome}"></span>
-                </li>
-                <li>
-                    <h3>Iniziali</h3>
-                    span class="ui-li-aside" th:text="${paziente.iniziali}"></span>
-                </li>
-                <li>
-                    <h3>Sesso</h3>
-                    span class="ui-li-aside" th:text="${paziente.sesso}"></span>
-                </li>
-                <li>
-                    <h3>Data di nascita</h3>
-                    span class="ui-li-aside" th:text="${#calendars.format(paziente.datanascita,'dd/MM/yyyy')}"></span>
-                </li>
-                <li>
-                    <h3>Luogo di nascita</h3>
-                    span class="ui-li-aside" th:text="${paziente.luogonascita}"></span>
-                </li>
-                <li>
-                    <h3>Nazionalit&agrave;</h3>
-                    span class="ui-li-aside" th:text="${paziente.nazionenascita}"></span>
-                </li>
-            </ul>
+            <div data-role="content" layout:fragment="content">
 
-            <div data-role="collapsible-set">
-                <div data-role="collapsible">
-                    <h3>Antropom</h3>
-
-                    <ul data-role="listview">
-                        <li>
-                            <h3>Peso</h3>
-                            span class="ui-li-aside"><span th:text="${paziente.peso}"></span> <strong>Kg</strong></span>
-                        </li>
-                        <li>
-                            <h3>Altezza (m)</h3>
-                            span class="ui-li-aside"><span th:text="${paziente.altezza}"></span> <strong>m</strong></span>
-                        </li>
-                        <li>
-                            <h3>BMI</h3>
-                            span class="ui-li-aside" th:text="${paziente.bmi}"></span>
-                        </li>
-                    </ul>
-
+                <div data-role="popup" id="type-popup">
+                    <p>
+                        Selezionare il tipo di esame:
+                        <a data-th-href="@{/exam/add(type=sof,anagrafica_id=${patientid})}" href="../exam/add.html" data-role="button" data-icon="plus">SOF</a>
+                        <a data-th-href="@{/exam/add(type=ctv,anagrafica_id=${patientid})}" href="../exam/add.html" data-role="button" data-icon="plus">Colon TC Virtuale</a>
+                        <a data-th-href="@{/exam/add(type=csc,anagrafica_id=${patientid})}" href="../exam/add.html" data-role="button" data-icon="plus">Colonscopia</a>
+                    </p>
                 </div>
 
-                <div data-role="collapsible">
-                    <h3>Stile di vita</h3>
-                    <ul data-role="listview">
-                        <li>
-                            <h3>Fumo</h3>
-                            <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
-                                <label for="fumo">Si/No</label>
-                                <input type="checkbox" name="fumo" id="fumo" th:checked="${paziente.fumo}" disabled="disabled"/>
-                            </fieldset>
-                        </li>
-                        <li>
-                            <h3>Alcool</h3>
-                            <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
-                                <label for="alcohol">Si/No</label>
-                                <input type="checkbox" name="alcohol" id="alcohol" th:checked="${paziente.alcohol}" disabled="disabled"/>
-                            </fieldset>
-                        </li>
-                    </ul>
+                <ul data-role="listview" data-inset="true">
+                    <li data-th-if="${paziente.cartella}">
+                        <h3>Numero cartella</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.cartella}"></span>
+                    </li>
+                    <li>
+                        <h3>Nome</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.nome}"></span>
+                    </li>
+                    <li>
+                        <h3>Cognome</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.cognome}"></span>
+                    </li>
+                    <li>
+                        <h3>Iniziali</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.iniziali}"></span>
+                    </li>
+                    <li>
+                        <h3>Sesso</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.sesso}"></span>
+                    </li>
+                    <li>
+                        <h3>Data di nascita</h3>
+                        <span class="ui-li-aside" data-th-text="${#calendars.format(paziente.datanascita,'dd/MM/yyyy')}"></span>
+                    </li>
+                    <li>
+                        <h3>Luogo di nascita</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.luogonascita}"></span>
+                    </li>
+                    <li>
+                        <h3>Nazionalit&agrave;</h3>
+                        <span class="ui-li-aside" data-th-text="${paziente.nazionenascita}"></span>
+                    </li>
+                </ul>
+
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h3>Antropom</h3>
+
+                        <ul data-role="listview">
+                            <li>
+                                <h3>Peso</h3>
+                                <span class="ui-li-aside"><span data-th-text="${paziente.peso}"></span> <strong>Kg</strong></span>
+                            </li>
+                            <li>
+                                <h3>Altezza (m)</h3>
+                                <span class="ui-li-aside"><span data-th-text="${paziente.altezza}"></span> <strong>m</strong></span>
+                            </li>
+                            <li>
+                                <h3>BMI</h3>
+                                <span class="ui-li-aside" data-th-text="${paziente.bmi}"></span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Stile di vita</h3>
+                        <ul data-role="listview">
+                            <li>
+                                <h3>Fumo</h3>
+                                <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
+                                    <label for="fumo">Si/No</label>
+                                    <input type="checkbox" name="fumo" id="fumo" data-th-checked="${paziente.fumo}" disabled="disabled"/>
+                                </fieldset>
+                            </li>
+                            <li>
+                                <h3>Alcool</h3>
+                                <fieldset data-role="controlgroup" data-mini="true" class="ui-li-aside">
+                                    <label for="alcohol">Si/No</label>
+                                    <input type="checkbox" name="alcohol" id="alcohol" data-th-checked="${paziente.alcohol}" disabled="disabled"/>
+                                </fieldset>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible">
+                        <h3>Storia familiare</h3>
+                        <ul data-role="listview">
+                            <li data-role="list-divider">
+                                <h3>Lista familiarità</h3>
+                                <p class="ui-li-divider-aside">
+                                    <a href="../familiare-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo familiare</a>
+                                </p>
+                            </li>
+                            <li data-th-if="${#lists.isEmpty(paziente.familiari)}">Nessuna familiarità trovata.</li>
+
+                            <li data-th-each="familiare : ${paziente.familiari}" >
+                                <a data-th-href="@{/familiare/{id}(${familiare.id})}" href="../familiare/detail.html?id=${familiare.id}">
+                                    <h3 data-th-text="|#{messages.degree} ${familiare.grado}|">Grado 1</h3>
+                                    <p data-th-text="${familiare.summaryHeading}"></p>
+                                    <p class="ui-li-aside">
+                                        <strong>CCR: </strong><span data-th-text="${familiare.ccr?'Si':'No'}">Si</span><br/>
+                                        <strong>PA: </strong><span data-th-text="${familiare.pa?'Si':'No'}"></span><br/>
+                                        <strong>Altri: </strong><span data-th-text="${familiare.altric?'Si':'No'}"></span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Esami</h3>
+                        <ul data-role="listview" data-filter="true">
+                            <li data-role="list-divider">
+                                <h3>Lista esami</h3>
+                                <p class="ui-li-divider-aside">
+                                    <a href="#type-popup" data-rel="popup" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo esame</a>
+                                </p>
+                            </li>
+                            <li data-th-if="${#lists.isEmpty(paziente.esami)}">Nessun esame trovato.</li>
+                            <li data-th-each="esame : ${paziente.esami}">
+                                <a data-th-href="@{/esame/{id}(id=${esame.id})}" href="..esame/detail.html">
+                                    <h3 data-th-text="${esame.tipo}"></h3>
+                                    <p class="ui-li-aside"><strong>Data: </strong><span data-th-text="${#calendars.format(esame.dataesame,'dd/MM/yyyy')}">11/11/2001</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Patologie concomitanti</h3>
+                        <ul data-role="listview">
+                            <li data-role="list-divider">
+                                <h3>Lista patologie concomitanti</h3>
+                                <p class="ui-li-divider-aside">
+                                    <a href="../patologiec-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova patologia</a>
+                                </p>
+                            </li>
+                            <li data-th-if="${#lists.isEmpty(paziente.patologiec)}">Nessuna patologia trovata.</li>
+                            <li data-th-each="patologia : ${paziente.patologiec}">
+                                <a data-th-href="@{/patologia/{id}(id=${patologia.id})}" href="../patologia/detail.html">
+                                    <h3 data-th-text="${patologia.tipo}">Tipo</h3>
+                                    <p data-th-text="${patologia.descrizione}">Descrizione</p>
+                                    <p class="ui-li-aside"><strong>Sindrome: </strong><span data-th-text="${patologia.sindrome}">Sindrome</span><br/><strong>Mutazioni: </strong><span data-th-text="${patologia.mutazioni}"></span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Terapie</h3>
+                        <ul data-role="listview">
+                            <li data-role="list-divider">
+                                <h3>Lista terapie</h3>
+                                <p class="ui-li-divider-aside">
+                                    <a href="../terapie-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova terapia</a>
+                                </p>
+                            </li>
+
+                            <li data-th-if="${#lists.isEmpty(paziente.terapie)}">Nessuna terapia trovata.</li>
+                            <li data-th-each="terapia : ${paziente.terapie}">
+                                <a href="../terapie-detail.jsp?id=${row.id}">
+                                    <h3>${row.tipo}</h3>
+                                    <p>${row.descrizione}</p>
+                                    <p class="ui-li-aside"><strong>Inizio: </strong><fmt:formatDate value="${row.inizio}" pattern="dd/MM/yyyy"/><br/><strong>Fine: </strong><fmt:formatDate value="${row.fine}" pattern="dd/MM/yyyy"/><br/><strong>Durata (gg): </strong>${row.durata}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <a data-th-href="@{/paziente/{id}/esami(id=${paziente.id})}" href="../esame/list.html">Esami</a>
+                        <span class="ui-li-count"><span data-th-text="${#lists.size(paziente.esami)}">0</span> esami</span>
+                    </li>
+                </ul>
+
+                <div class="ui-grid-a"  >
+                    <div class="ui-block-a">
+                        <form data-th-action="@{/paziente/{id}/delete(id=${paziente.id})}" action="../index.html" method="post">
+                            <input type="hidden" name="id" id="id" value="${param.id}"/>
+                            <button type="submit" name="action" value="delete" data-icon="delete" data-iconpos="left">Delete</button>
+                        </form>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-th-href="@{/paziente/{id}/edit(id=${paziente.id})}" href="edit.html" data-role="button" data-icon="gear" data-iconpos="right">Edit</a>
+                    </div>
                 </div>
             </div>
-
-            <div data-role="collapsible-set">
-                <div data-role="collapsible">
-                    <h3>Storia familiare</h3>
-                    <ul data-role="listview">
-                        <li data-role="list-divider">Lista familiarità <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="../familiare-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo familiare</a></li>
-                        <c:choose>
-                            <c:when test="${rsfam.rowCount eq 0}">
-                                <li>Nessuna familiarità trovata.</li>
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach var="row" items="${rsfam.rows}">
-                                    <li>
-                                        <a href="../familiare-detail.jsp?id=${row.id}">
-                                            <h3>Grado ${row.grado}</h3>
-                                            <p>${row.ccr?"CCR":""}${row.pa?(row.ccr?", PA":"PA"):""}${row.altric?(row.ccr or row.pa?", ".concat(row.desc_altri):row.desc_altri):""}</p>
-                                            <p class="ui-li-aside">
-                                                <strong>CCR: </strong>${row.ccr?"Si":"No"}  <br/>
-                                                <strong>PA: </strong>${row.pa?"Si":"No"}  <br/>
-                                                <strong>Altri: </strong>${row.altric?"Si":"No"}
-                                            </p>
-                                        </a>
-                                    </li>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Esami</h3>
-                    <ul data-role="listview" data-filter="true">
-                        <li data-role="list-divider">Lista esami <a class="ui-li-count" style="font-size: 14px;padding: 0;" href="#type-popup" data-rel="popup" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuovo esame</a></li>
-                        <c:choose>
-                            <c:when test="${rses.rowCount eq 0}">
-                                <li>Nessun esame trovato.</li>
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach var="row" items="${rses.rows}">
-                                    <li>
-                                        <a href="exam-detail-${row.tipo}.jsp?id=${row.id}">
-                                            <h3><scr:decodeExamType>${row.tipo}</scr:decodeExamType></h3>
-                                            <p class="ui-li-aside"><strong>Data: </strong><fmt:formatDate value="${row.dataesame}" pattern="dd/MM/yyyy"/></p>
-                                        </a>
-                                    </li>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Patologie concomitanti</h3>
-                    <ul data-role="listview">
-                        <li data-role="list-divider">Lista patologie concomitanti<a class="ui-li-count" style="font-size: 14px;padding: 0;" href="../patologiec-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova patologia</a></li>
-                        <c:choose>
-                            <c:when test="${rspcon.rowCount eq 0}">
-                                <li>Nessuna patologia trovata.</li>
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach var="row" items="${rspcon.rows}">
-                                    <li>
-                                        <a href="../patologiec-detail.jsp?id=${row.id}">
-                                            <h3>${row.tipo}</h3>
-                                            <p>${row.descrizione}</p>
-                                            <p class="ui-li-aside"><strong>Sindrome: </strong>${row.sindrome}<br/><strong>Mutazioni: </strong>${row.mutazioni}</p>
-                                        </a>
-                                    </li>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
-                </div>
-                <div data-role="collapsible">
-                    <h3>Terapie</h3>
-                    <ul data-role="listview">
-                        <li data-role="list-divider">Lista terapie<a class="ui-li-count" style="font-size: 14px;padding: 0;" href="../terapie-add.jsp?anagrafica_id=${patientid}" data-role="button" data-icon="plus" data-iconpos="notext">Inserimento nuova terapia</a></li>
-                        <c:choose>
-                            <c:when test="${rster.rowCount eq 0}">
-                                <li>Nessuna terapia trovata.</li>
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach var="row" items="${rster.rows}">
-                                    <li>
-                                        <a href="../terapie-detail.jsp?id=${row.id}">
-                                            <h3>${row.tipo}</h3>
-                                            <p>${row.descrizione}</p>
-                                            <p class="ui-li-aside"><strong>Inizio: </strong><fmt:formatDate value="${row.inizio}" pattern="dd/MM/yyyy"/><br/><strong>Fine: </strong><fmt:formatDate value="${row.fine}" pattern="dd/MM/yyyy"/><br/><strong>Durata (gg): </strong>${row.durata}</p>
-                                        </a>
-                                    </li>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
-                </div>
-            </div>
-
-            <ul data-role="listview" data-inset="true">
-                <li><a href="../exam-list.jsp?anagrafica_id=${patientid}">Esami</a> <span class="ui-li-count"><fmt:formatNumber value="${rspn.rows[0].numesami}" maxFractionDigits="0"/> esami</span></li>
-            </ul>
-
-            <div class="ui-grid-a"  >
-                <div class="ui-block-a">
-                    <form action="../index.jsp" method="post">
-                        <input type="hidden" name="id" id="id" value="${param.id}"/>
-                        <button type="submit" name="action" value="delete" data-icon="delete" data-iconpos="left">Delete</button>
-                    </form>
-                </div>
-                <div class="ui-block-b">
-                    <a href="edit.html?id=${rs.rows[0].id}" data-role="button" data-icon="gear" data-iconpos="right">Edit</a>
-                </div>
-            </div>
-        </div>
-
-        <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
-            Logged user: <span sec:authentication="name">Bob</span> |
-            Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span> |
-        </div>
-
         </div>
     </body>
 </html>

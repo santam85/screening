@@ -16,6 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.authentication.dao.ReflectionSaltSource;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
@@ -26,9 +27,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Properties;
 
 @Configuration
 @ComponentScan
@@ -67,17 +70,20 @@ public class Application extends SpringBootServletInitializer {
 
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {
+
             auth
                 .userDetailsService(usersDetailsService)
-                .passwordEncoder(passwordEncoder).withObjectPostProcessor(new ObjectPostProcessor<DaoAuthenticationProvider>() {
-                @Override
-                public DaoAuthenticationProvider postProcess(DaoAuthenticationProvider dap) {
-                    ReflectionSaltSource rss = new ReflectionSaltSource();
-                    rss.setUserPropertyToUse("salt");
-                    dap.setSaltSource(rss);
-                    return dap;
-                }
-            });
+                .passwordEncoder(passwordEncoder)
+                .withObjectPostProcessor(new ObjectPostProcessor<DaoAuthenticationProvider>() {
+
+                    @Override
+                    public DaoAuthenticationProvider postProcess(DaoAuthenticationProvider dap) {
+                        ReflectionSaltSource rss = new ReflectionSaltSource();
+                        rss.setUserPropertyToUse("salt");
+                        dap.setSaltSource(rss);
+                        return dap;
+                    }
+                });
         }
     }
 

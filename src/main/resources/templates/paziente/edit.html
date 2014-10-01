@@ -1,158 +1,130 @@
-<%-- 
-    Document   : edit
-    Created on : Aug 30, 2012, 5:38:09 PM
-    Author     : MSANTARE
---%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="index">
+    <head>
+        <title data-th-text="|#{message.title} - ${title}|">Screening - Pazienti</title>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+        <!-- bower:css -->
+        <link rel="stylesheet" data-th-href="@{/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css}" href="../../static/vendor/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
+        <!-- endbower -->
 
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%@include file="WEB-INF/jspf/sessionmanager.jsp" %>
-
-<c:catch var="ex">
-    <sql:query var="rs" dataSource="jdbc/screening">
-        select * from anagrafica where id = ?
-        <sql:param value="${param.id}" />
-    </sql:query>
-</c:catch>
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <title>Screening - Modifica paziente</title> 
-        <%@include file="WEB-INF/jspf/head.jsp" %>
+        <script data-th-src="@{/vendor/requirejs/require.js}" src="../../static/vendor/requirejs/require.js" data-main="../../static/js/main-static"></script>
     </head>
     <body>
-        <c:import url="WEB-INF/jspf/header.jsp">
-            <c:param name="key" value="value" />
-        </c:import>
+        <div id="index" data-role="page">
 
-        <div data-role="content">
-            <c:choose>
-                <c:when test="${not empty ex}">
-                    <div data-role="collapsible" data-collapsed="false" data-icon="alert">
-                        <h3>Error:</h3>
-                        <p>${ex.localizedMessage}</p>
-                    </div> 
-                </c:when>
-                <c:otherwise>
-                    <form action="detail.html?id=${rs.rows[0].id}" method="post">
+            <div>
+                <h1>Database Screening</h1>
+                <form sec:authorize="isAuthenticated()" data-th-action="@{/logout}" method="post">
+                    <button name="action" value="logout" class="ui-btn-right" data-inline="true" data-icon="delete">Log Out</button>
+                </form>
+            </div>
 
-                        <h2>Edit patient information</h2>
+            <div data-role="main" class="ui-content" layout:fragment="content">
+                <h2>Edit patient information</h2>
+
+                <h3>Anagrafica</h3>
+
+                <form action="#" data-th-action="@{/paziente/{id}/edit(id=${paziente.id})}" data-th-object="${paziente}" method="post">
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('screening')}" data-th-text="#{messages.screening}">Screening:</label>
+                        <input type="checkbox"
+                            data-th-field="*{screening}"
+                            data-th-attr="data-on-text=#{messages.on},data-off-text=#{messages.off}"
+                            data-role="flipswitch"
+                            data-on-text="Yes"
+                            data-off-text="No" />
+                    </div>
+
+                    <div class="ui-field-contain" data-th-if="${cartella}">
+                        <label data-th-for="${#ids.next('cartella')}" data-th-text="#{messages.foldernumber}">Numero Cartella:</label>
+                        <input type="text" data-th-field="*{cartella}" data-mini="true" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('nome')}" data-th-text="#{messages.name}">Nome:</label>
+                        <input type="text" data-th-field="*{nome}" data-mini="true" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('cognome')}" data-th-text="#{messages.surname}">Cognome:</label>
+                        <input type="text" data-th-field="*{cognome}" data-mini="true" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('iniziali')}" data-th-text="#{messages.initials}">Iniziali:</label>
+                        <input type="text" data-th-field="*{iniziali}" data-mini="true" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('sesso')}" data-th-text="#{messages.gender}">Sesso:</label>
+                        <select data-th-field="*{sesso}" data-role="flipswitch" data-th-remove="all-but-first">
+                            <option data-th-each="gender : ${allGenders}"
+                                data-th-value="${gender}" data-th-text="#{${'messages.gender.' + gender}}">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('datanascita')}" data-th-text="#{messages.birthdate}">Data di nascita:</label>
+                        <input type="date" data-th-field="*{datanascita}" data-mini="true" data-role="date"/>
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('luogonascita')}" data-th-text="#{messages.birthplace}">Luogo di nascita:</label>
+                        <input type="text" data-th-field="*{luogonascita}" data-mini="true" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label data-th-for="${#ids.next('nazionenascita')}" data-th-text="#{messages.nationality}">Nazionalit&agrave;:</label>
+                        <input type="text" data-th-field="*{nazionenascita}" data-mini="true" />
+                    </div>
 
 
-                        <h3>Anagrafica</h3>
-                        <div data-role="fieldcontain">
-                            <label for="screeningslider">Screening:</label>
-                            <select id="screeningslider" class="screeningslider" data-role="slider" data-mini="true">
-                                <option value="No" ${empty rs.rows[0].cartella?'selected="true"':''} >No</option>
-                                <option value="Si" ${not empty rs.rows[0].cartella?'selected="true"':''}>Si</option>
-                            </select>
-                        </div>
-
-                        <div data-role="fieldcontain" class="cartellafieldcontain" ${empty rs.rows[0].cartella?'style="display:none;"':''}>
-                            <label for="cartella">Numero Cartella:</label>
-                            <input type="text" name="cartella" id="cartella" value="${rs.rows[0].cartella}" data-mini="true" />
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="nome">Nome:</label>
-                            <input type="text" name="nome" id="nome" value="${rs.rows[0].nome}" data-mini="true" required/>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="cognome">Cognome:</label>
-                            <input type="text" name="cognome" id="cognome" value="${rs.rows[0].cognome}" data-mini="true" required/>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="iniziali">Iniziali:</label>
-                            <input type="text" name="iniziali" id="iniziali" value="${rs.rows[0].iniziali}" data-mini="true" required/>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="sesso">Sesso:</label>
-                            <select name="sesso" id="sesso" data-role="slider" data-mini="true">
-                                <option value="M" ${rs.rows[0].sesso eq 'M'?'selected="true"':''}>M</option>
-                                <option value="F" ${rs.rows[0].sesso eq 'F'?'selected="true"':''}>F</option>
-                            </select>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="datanascita">Data di nascita:</label>
-                            <input type="date" name="datanascita" id="datanascita" value="<fmt:formatDate value="${rs.rows[0].datanascita}" pattern="dd/MM/yyyy" />" data-mini="true" data-role="datebox" required/>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="luogonascita">Luogo di nascita:</label>
-                            <input type="text" name="luogonascita" id="luogonascita" value="${rs.rows[0].luogonascita}" data-mini="true" required/>
-                        </div>
-
-                        <div data-role="fieldcontain">
-                            <label for="nazionenascita">Nazionalit&agrave;:</label>
-                            <input type="text" name="nazionenascita" id="nazionenascita" value="${rs.rows[0].nazionenascita}" data-mini="true" required/>
-                        </div>
-
-
-                        <div data-role="collapsible-set">
-                            <div data-role="collapsible" data-collapsed="false">
-                                <h3>Antropom</h3>
-                                <p>
-                                <div data-role="fieldcontain">
-                                    <label for="peso">Peso</label>
-                                    <input type="text" name="peso" id="peso" value="${rs.rows[0].peso}" data-mini="true" />
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible" data-collapsed="false">
+                            <h3>Antropom</h3>
+                            <div>
+                                <div class="ui-field-contain">
+                                    <label data-th-for="${#ids.next('peso')}" data-th-text="#{messages.weight}">Peso:</label>
+                                    <input type="text" data-th-field="*{peso}" data-mini="true" />
                                 </div>
 
-                                <div data-role="fieldcontain">
-                                    <label for="altezza">Altezza (m)</label>
-                                    <input type="text" name="altezza" id="altezza" value="${rs.rows[0].altezza}" data-mini="true" />
+                                <div class="ui-field-contain">
+                                    <label data-th-for="${#ids.next('altezza')}" data-th-text="#{messages.height}">Altezza (m):</label>
+                                    <input type="text" data-th-field="*{altezza}" data-mini="true" />
                                 </div>
-                                </p>
                             </div>
+                        </div>
 
-                            <div data-role="collapsible">
-                                <h3>Stile di vita</h3>
-                                <p>
-                                <div data-role="fieldcontain">
-                                    <fieldset data-role="controlgroup" data-mini="true">
-                                        <legend>Fumo</legend>
-
-                                        <label for="fumo">Si/No</label>
-                                        <input type="checkbox" name="fumo" id="fumo" ${rs.rows[0].fumo?'':'checked="true"'}/>
-
+                        <div data-role="collapsible">
+                            <h3>Stile di vita</h3>
+                            <div>
+                                <div class="ui-field-contain">
+                                    <fieldset data-role="controlgroup">
+                                        <legend data-th-text="#{messages.smoker}">Fumo:</legend>
+                                        <label data-th-for="${#ids.next('fumo')}" for="fumo" data-th-text="#{messages.yesno}">Si/No</label>
+                                        <input type="checkbox" data-th-field="*{fumo}" id="fumo" />
                                     </fieldset>
                                 </div>
 
-                                <div data-role="fieldcontain">
-                                    <fieldset data-role="controlgroup" data-mini="true">
-                                        <legend>Alcool</legend>
-
-                                        <label for="alcohol">Si/No</label>
-                                        <input type="checkbox" name="alcohol" id="alcohol" ${rs.rows[0].alcohol?'':'checked="true"'}/>
-
+                                <div class="ui-field-contain">
+                                    <fieldset data-role="controlgroup">
+                                        <legend data-th-text="#{messages.drinker}">Alcohol:</legend>
+                                        <label data-th-for="${#ids.next('alcohol')}" for="alcohol" data-th-text="#{messages.yesno}" >Si/No</label>
+                                        <input type="checkbox" data-th-field="*{alcohol}" id="alcohol"/>
                                     </fieldset>
                                 </div>
 
-                                </p>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="ui-grid-a"  >
-                            <div class="ui-block-a">
-                                <a data-rel="back" data-role="button" data-icon="delete" data-iconpos="left">Cancel</a>
-                            </div>
-                            <div class="ui-block-b">
-                                <button type="submit" name="action" value="save" data-icon="check" data-iconpos="right">Save</button>
-                            </div>
-                        </div>
-                    </form>
-                </c:otherwise>
-            </c:choose>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a"><input type="reset" value="Cancel" data-iconpos="left" data-icon="delete" /></div>
+                        <div class="ui-block-b"><input type="submit" name="action" value="Save" data-icon="check" data-iconpos="right" data-theme="b"/></div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-
-        <%@include file="WEB-INF/jspf/footer.jsp" %>
-
     </body>
 </html>

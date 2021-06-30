@@ -26,8 +26,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-bower-requirejs');
     grunt.loadNpmTasks('grunt-wiredep');
-    grunt.loadNpmTasks('grunt-livereload');
-    grunt.loadNpmTasks('grunt-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['bower']);
 }
